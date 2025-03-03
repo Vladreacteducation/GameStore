@@ -1,0 +1,44 @@
+version: '3.9'
+services:
+  mysql:
+    image: mysql:latest
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: wordpress
+      MYSQL_DATABASE: gamestore
+      MYSQL_USER: wordpress
+      MYSQL_PASSWORD: wordpress
+    ports:
+      - "3310:3306"
+    volumes:
+      - ./.srv/database:/var/lib/mysql
+
+  wordpress:
+    image: wordpress:latest
+    restart: always
+    environment:
+      WORDPRESS_DB_HOST: mysql:3306  # Update to the correct port for MySQL
+      WORDPRESS_DB_USER: wordpress
+      WORDPRESS_DB_PASSWORD: wordpress
+      WORDPRESS_DB_NAME: gamestore
+    ports:
+      - "8000:80"
+    volumes:
+      - ./.srv/wordpress:/var/www/html
+      - ./themes:/var/www/html/wp-content/themes/ # вказуємо шлях до папки з темами
+      - ./plugins:/var/www/html/wp-content/plugins/ # вказуємо шлях до папки з плагінами
+      - ./mu-plugins:/var/www/html/wp-content/mu-plugins/ # вказуємо шлях до папки з mu-плагінами
+      - ./.srv/custom.ini:/usr/local/etc/php/conf.d/custom.ini # підключення свого php.ini
+    depends_on:
+      - mysql
+ 
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    environment:
+      MYSQL_USERNAME: wordpress
+      MYSQL_ROOT_PASSWORD: wordpress
+      PMA_HOST: mysql
+    ports:
+      - "8181:80"
+    depends_on:
+      - mysql
