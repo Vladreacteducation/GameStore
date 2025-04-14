@@ -1,11 +1,59 @@
 /*!***************************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/block-hero/editor.scss ***!
   \***************************************************************************************************************************************************************************************************************************************************/
-/**
- * The following styles get applied inside the editor only.
- *
- * Replace them with your own styles or remove the file completely.
- */
+/* Variables */
+:root {
+  --white-contrast: #0a090a;
+  --purple-main: #6f76C0;
+  --text-secondary: rgba(14, 13, 15, 0.7);
+  --mobile-menu:#fafafa;
+  --mask-gradient: linear-gradient(270deg, rgba(14, 13, 15, 0) 0%, #ececec 79.5%);
+  --mask-gradient-second: linear-gradient(180deg, rgba(250, 250, 250, 0) 0%, #fafafa 100%);
+  --accent-gradient: linear-gradient(90deg, #3dafe2 0%, #6f76c0 100%);
+  --blue-48: rgba(61, 175, 226, 0.48);
+}
+
+.hero-button {
+  border-radius: 5px;
+  padding: 20px 32px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 14px;
+  line-height: 1;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #fff;
+  background: var(--accent-gradient, linear-gradient(-90deg, #3dafe2 0%, #6f76c0 100%));
+  transition: all 0.3s ease-in-out;
+}
+.hero-button.shadow {
+  box-shadow: 0 16px 24px 0 var(--blue-48, rgba(61, 175, 226, 0.48));
+}
+.hero-button:hover {
+  background: linear-gradient(-90deg, #6f76c0 0%, #555ba5 100%);
+}
+.hero-button:hover.shadow {
+  box-shadow: 0 8px 12px -6px var(--blue-48, rgba(61, 175, 226, 0.48));
+}
+
+.wp-block-blocks-gamestore-block-hero .hero-content .hero-title {
+  line-height: 1.2;
+}
+
+.wp-block-blocks-gamestore-block-hero .hero-content .hero-title,
+.wp-block-blocks-gamestore-block-hero .hero-content p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.is-root-container.is-desktop-preview {
+  overflow: hidden;
+}
+
 .slide-item-image p {
   font-weight: 700;
   margin-top: 16px !important;

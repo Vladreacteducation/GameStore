@@ -1,0 +1,93 @@
+name: GameStore Deploy
+on:
+  push:
+    branches:
+      - dev  # Workflow запускається при пушах у гілку `dev`
+  release:
+    types: [published]  # Workflow також запускається при публікації нового релізу
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest  # Використовуємо останню версію Ubuntu для виконання завдань
+
+    steps:
+      # Крок 1: Клонування репозиторію на віртуальну машину
+      - name: Checkout
+        uses: actions/checkout@master  # Використовуємо action для клонування репозиторію
+
+      # Крок 2: Підготовка архіву WordPress 
+      - name: Prepare Wordpress Zip
+        run: |
+          WP_LINK=$(cat wp-version-control.cfg)  # Зчитуємо посилання на версію WordPress з файлу
+          wget -O wordpress.zip $WP_LINK  # Завантажуємо WordPress за вказаним посиланням
+
+      # Крок 3: Підготовка архіву з плагінами та темами
+      - name: Prepare plugins and theme zip
+        run: zip -r wpcontent.zip plugins mu-plugins themes  # Архівуємо плагіни та теми
+
+      # Крок 4: Копіювання архівів на сервер
+      - name: Copy Zips to Server
+        uses: appleboy/scp-action@master  # Використовуємо SCP для копіювання файлів
+        with:
+          host: ${{ secrets.SSH_HOST }}  # Хост сервера
+          username: ${{ secrets.SSH_USER }}  # Користувач SSH
+          password: ${{ secrets.SSH_PASSWORD }}  # Пароль SSH
+          port: ${{ secrets.SSH_PORT }}  # Порт SSH
+          source: "./wordpress.zip, ./wpcontent.zip"  # Джерела файлів для копіювання
+          target: ${{github.event_name == 'push' && '/var/www/html/dev/' || '/var/www/html/live/'}}  # Цільова директорія на сервері (залежить від події)
+
+      # Крок 5: Увімкнення режиму обслуговування
+      - name: Enable Maintenance Mode
+        uses: appleboy/scp-action@master  # Використовуємо SCP для копіювання файлу режиму обслуговування
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          password: ${{ secrets.SSH_PASSWORD }}
+          port: ${{ secrets.SSH_PORT }}
+          source: "./maintenance"  # Файл для увімкнення режиму обслуговування
+          target: ${{github.event_name == 'push' && '/var/www/html/dev/' || '/var/www/html/live/'}}  # Цільова директорія
+
+      # Крок 6: Оновлення ядра WordPress
+      - name: Update Wordpress Core
+        uses: appleboy/scp-action@v.1.0.3  # Використовуємо SCP для оновлення WordPress
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          password: ${{ secrets.SSH_PASSWORD }}
+          port: ${{ secrets.SSH_PORT }}
+          source: "./wordpress.zip"
+          script: |
+            # Видаляємо старі файли WordPress, крім wp-config.php
+            find "${{github.event_name == 'push' && '/var/www/html/dev/' || '/var/www/html/live/'}}" -type f -name "*.php" ! -name "wp-config.php" -delete;
+            rm -r "${{github.event_name == 'push' && '/var/www/html/dev/' || '/var/www/html/live/'}}/wp-admin/"  # Видаляємо директорію wp-admin
+            rm -r "${{github.event_name == 'push' && '/var/www/html/dev/' || '/var/www/html/live/'}}/wp-includes/"  # Видаляємо директорію wp-includes
+            unzip -o wordpress.zip -d "${{github.event_name == 'push' && '/var/www/html/dev/' || '/var/www/html/live/'}}"  # Розархівуємо нову версію WordPress
+            mv "${{github.event_name == 'push' && '/var/www/html/dev/' || '/var/www/html/live/'}}/wordpress"/* "${{github.event_name == 'push' && '/var/www/html/dev/' || '/var/www/html/live/'}}/"  # Переміщуємо файли
+            rm -r "${{github.event_name == 'push' && '/var/www/html/dev/' || '/var/www/html/live/'}}/wordpress"  # Видаляємо тимчасову директорію
+
+      # Крок 7: Оновлення плагінів та тем
+      - name: Update Plugins and Themes
+        uses: appleboy/scp-action@v.1.0.3  # Використовуємо SCP для оновлення плагінів та тем
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          password: ${{ secrets.SSH_PASSWORD }}
+          port: ${{ secrets.SSH_PORT }}
+          script: |
+            rm -rf "${{github.event_name == 'push' && '/var/www/html/dev/' || '/var/www/html/live/'}}/wp-content/plugins/"  # Видаляємо старі плагіни
+            rm -rf "${{github.event_name == 'push' && '/var/www/html/dev/' || '/var/www/html/live/'}}/wp-content/mu-plugins"  # Видаляємо старі mu-плагіни
+            rm -rf "${{github.event_name == 'push' && '/var/www/html/dev/' || '/var/www/html/live/'}}/wp-content/themes/"  # Видаляємо старі теми
+            unzip -o "${{github.event_name == 'push' && '/var/www/html/dev/' || '/var/www/html/live/'}}/wpcontent.zip"  # Розархівуємо нові плагіни та теми
+
+      # Крок 8: Вимкнення режиму обслуговування та видалення архівів
+      - name: Disable Maintenance Mode and Remove zips
+        uses: appleboy/scp-action@v.1.0.3  # Використовуємо SCP для завершення процесу
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          password: ${{ secrets.SSH_PASSWORD }}
+          port: ${{ secrets.SSH_PORT }}
+          script: |
+            rm -f "${{github.event_name == 'push' && '/var/www/html/dev/' || '/var/www/html/live/'}}/.maintenance"  # Видаляємо файл режиму обслуговування
+            rm -f "${{github.event_name == 'push' && '/var/www/html/dev/' || '/var/www/html/live/'}}/.wpcontent.zip"  # Видаляємо архів з плагінами та темами
+            rm -f "${{github.event_name == 'push' && '/var/www/html/dev/' || '/var/www/html/live/'}}/.wordpress.zip"  # Видаляємо архів WordPress

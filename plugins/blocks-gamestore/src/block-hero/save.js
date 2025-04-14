@@ -22,7 +22,7 @@ export default function save({ attributes }) {
 
 			{image && <img className="image-bg" src={image} alt="Background" />}
 
-			<div className="hero-mask">
+			<div className="hero-mask"></div>
 				<div className="hero-content">
 					<RichText.Content
 						tagName="h1"
@@ -35,7 +35,7 @@ export default function save({ attributes }) {
 						value={description}
 					/>
 					{link && linkAnchor && (
-						<a href={link} className="hero-button">
+						<a href={link} className="hero-button shadow">
 							{linkAnchor}
 						</a>
 					)}
@@ -55,9 +55,7 @@ export default function save({ attributes }) {
 							</div>
 						</div>
 					</div>
-				)}
-			</div>
+				)}  
 		</div>
 	);
 }
-

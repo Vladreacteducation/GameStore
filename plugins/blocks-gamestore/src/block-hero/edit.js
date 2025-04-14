@@ -189,7 +189,7 @@ const removeSlide = (index) => {
 				)}
 
 				{!isVideoUpload && image && <img className='image-bg' src={image} alt="Background" />}
-				<div className="hero-mask">
+				<div className="hero-mask"></div>
 					<div className="hero-content">
 						<RichText
 							tagName="h1"
@@ -206,12 +206,26 @@ const removeSlide = (index) => {
 							placeholder="Add a description for the hero section"
 						/>
 						{link && linkAnchor && (
-							<a href={link} className="hero-button">
+							<a href={link} className="hero-button shadow">
 								{linkAnchor}
 							</a>
 						)}
 					</div>
-				</div>
+					{slides && (
+					<div className="hero-slider">
+						<div className="slider-container">
+							<div className="swiper-wrapper">
+								{slides.map((slide, index) => (
+									<div key={index} className="swiper-slide slide-item">
+										<img src={slide.lightImage} alt="Logo" className='light-logo' />
+										<img src={slide.darkImage} alt="Logo"  className='dark-logo' />
+
+									</div>
+								))}
+							</div>
+						</div>
+					</div>
+				)} 
 			</div>
 		</>
 	);

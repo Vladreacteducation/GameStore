@@ -17,6 +17,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
 
+define ('BLOCKS_GAMESTORE_PATH', plugin_dir_path( __FILE__ ) ); # шлях до плагіна
+
+require_once (BLOCKS_GAMESTORE_PATH . 'blocks.php'); # підключення файлу з функцією view_block_games_line
+
 // add category for blocks
 add_filter( 'block_categories_all', function( $categories ) {
     return array_merge(
@@ -35,5 +39,8 @@ function create_block_blocks_gamestore_block_init() {
 	register_block_type( __DIR__ . '/build/block-hero' ); # реєстрація першого блоку
 	// register_block_type( __DIR__ . '/build/block-contact' ); # реєстрація другого блоку
 	register_block_type( __DIR__ . '/build/block-header' ); # реєстрація header блоку
+    register_block_type( __DIR__ . '/build/block-games-line',array(
+        'render_callback' => 'view_block_games_line'
+    )); # реєстрація games-line блоку
 }
 add_action( 'init', 'create_block_blocks_gamestore_block_init' );
