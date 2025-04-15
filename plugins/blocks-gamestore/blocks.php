@@ -36,3 +36,9 @@ function view_block_games_line($attributes){
 
     return ob_get_clean();
 }
+
+
+
+function view_block_recent_news(){
+    return 'recent news';
+}

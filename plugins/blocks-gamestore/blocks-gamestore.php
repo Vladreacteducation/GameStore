@@ -41,6 +41,10 @@ function create_block_blocks_gamestore_block_init() {
 	register_block_type( __DIR__ . '/build/block-header' ); # реєстрація header блоку
     register_block_type( __DIR__ . '/build/block-games-line',array(
         'render_callback' => 'view_block_games_line'
-    )); # реєстрація games-line блоку
+    )); # реєстрація games-line блоку   
+
+    register_block_type( __DIR__ . '/build/block-recent-news',array(
+        'render_callback' => 'view_block_recent_news'
+    ));  # реєстрація recent-news блоку
 }
 add_action( 'init', 'create_block_blocks_gamestore_block_init' );
