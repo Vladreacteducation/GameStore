@@ -4,6 +4,7 @@ import { useBlockProps, InspectorControls, MediaPlaceholder } from '@wordpress/b
 import { PanelBody, TextControl, TextareaControl } from '@wordpress/components';
 import{ __ } from '@wordpress/i18n';
 import './editor.scss';
+import ServerSideRender from '@wordpress/server-side-render';
 
 
 
@@ -51,6 +52,10 @@ export default function Edit({attributes, setAttributes}) {
 
 
 	<div { ...useBlockProps() }>
+		<ServerSideRender
+		  attributes={ attributes }
+		  block="blocks-gamestore/recent-news"
+		/>
 
 		</div>
 	</>
