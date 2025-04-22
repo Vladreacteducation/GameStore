@@ -1,0 +1,1 @@
+{"version":3,"file":"block-contact/view.js","mappings":";;;;AAEAA,OAAO,CAACC,GAAG,CAAE,yDAA0D,CAAC,C","sources":["webpack://blocks-gamestore/./src/block-contact/view.js"],"sourcesContent":["\n\nconsole.log( 'Hello World! (from create-block-blocks-gamestore block)' );\n\n"],"names":["console","log"],"sourceRoot":""}

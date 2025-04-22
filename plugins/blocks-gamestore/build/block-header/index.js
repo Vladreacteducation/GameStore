@@ -1,1 +1,595 @@
-(()=>{"use strict";var r,e={13:()=>{const r=window.wp.blocks,e=window.wp.blockEditor,o=window.wp.components,n=window.ReactJSXRuntime,s=JSON.parse('{"UU":"blocks-gamestore/block-header"}');(0,r.registerBlockType)(s.UU,{edit:function({attributes:r,setAttributes:s}){const{memberLink:i,cartLink:t}=r;return(0,n.jsxs)(n.Fragment,{children:[(0,n.jsx)(e.InspectorControls,{children:(0,n.jsxs)(o.PanelBody,{title:"Header Link",children:[(0,n.jsx)(o.TextControl,{label:"Member Link",value:i,onChange:r=>s({memberLink:r})}),(0,n.jsx)(o.TextControl,{label:"Cart Link",value:t,onChange:r=>s({cartLink:r})})]})}),(0,n.jsx)("div",{...(0,e.useBlockProps)(),children:(0,n.jsxs)("div",{className:"inner-header",children:[(0,n.jsx)(e.InnerBlocks,{}),(0,n.jsxs)("div",{className:"right-section",children:[(0,n.jsx)("div",{className:"header-search",children:(0,n.jsxs)("svg",{width:"24",height:"24",viewBox:"0 0 24 24",fill:"none",xmlns:"http://www.w3.org/2000/svg",children:[(0,n.jsx)("path",{d:"M22.29 21.66L17.61 16.95C20.97 13.2 20.7 7.44002 16.95 4.05002C13.2 0.660021 7.44002 0.960021 4.05002 4.71002C0.660021 8.46002 0.960021 14.22 4.71002 17.61C8.19002 20.76 13.5 20.76 16.98 17.61L21.69 22.32L22.29 21.66ZM10.83 19.05C6.30002 19.05 2.61002 15.36 2.61002 10.83C2.61002 6.27002 6.30002 2.61002 10.83 2.61002C15.36 2.61002 19.05 6.30002 19.05 10.83C19.05 15.36 15.36 19.05 10.83 19.05Z",fill:"var(--action-main-svg,  rgb(255, 255, 255))","fill-opacity":"0.64"}),(0,n.jsx)("path",{d:"M10.8301 3.83984V4.73984C14.1901 4.73984 16.9201 7.46984 16.9201 10.8298H17.8201C17.8201 6.95984 14.7001 3.83984 10.8301 3.83984Z",fill:"var(--action-main-svg,  rgb(255, 255, 255))","fill-opacity":"0.64"})]})}),(0,n.jsx)("div",{className:"header-mode-switcher",children:(0,n.jsxs)("svg",{width:"36",height:"36",viewBox:"0 0 36 36",fill:"none",xmlns:"http://www.w3.org/2000/svg",children:[(0,n.jsx)("path",{d:"M21 24V12",stroke:"var(--action-main-svg,  rgb(255, 255, 255))","stroke-opacity":"0.64","stroke-linecap":"round","stroke-linejoin":"round"}),(0,n.jsx)("path",{d:"M9 18H12",stroke:"var(--action-main-svg,  rgb(255, 255, 255))","stroke-opacity":"0.64","stroke-linecap":"round","stroke-linejoin":"round"}),(0,n.jsx)("path",{d:"M12.5098 9.51025L14.6398 11.6403",stroke:"var(--action-main-svg,  rgb(255, 255, 255))","stroke-opacity":"0.64","stroke-linecap":"round","stroke-linejoin":"round"}),(0,n.jsx)("path",{d:"M21 6V9",stroke:"var(--action-main-svg,  rgb(255, 255, 255))","stroke-opacity":"0.64","stroke-linecap":"round","stroke-linejoin":"round"}),(0,n.jsx)("path",{d:"M21 30V27",stroke:"var(--action-main-svg,  rgb(255, 255, 255))","stroke-opacity":"0.64","stroke-linecap":"round","stroke-linejoin":"round"}),(0,n.jsx)("path",{d:"M12.5098 26.4899L14.6398 24.3599",stroke:"var(--action-main-svg,  rgb(255, 255, 255))","stroke-opacity":"0.64","stroke-linecap":"round","stroke-linejoin":"round"}),(0,n.jsx)("path",{d:"M21 24C24.3137 24 27 21.3137 27 18C27 14.6863 24.3137 12 21 12C17.6863 12 15 14.6863 15 18C15 21.3137 17.6863 24 21 24Z",stroke:"var(--action-main-svg,  rgb(255, 255, 255))","stroke-opacity":"0.64","stroke-linecap":"round","stroke-linejoin":"round"})]})}),t&&(0,n.jsx)("div",{className:"header-cart-link",children:(0,n.jsx)("a",{href:t,children:(0,n.jsxs)("svg",{width:"36",height:"36",viewBox:"0 0 36 36",fill:"none",xmlns:"http://www.w3.org/2000/svg",children:[(0,n.jsx)("path",{d:"M7.71436 14.5718L9.42864 26.5718H26.5715L28.2858 14.5718",stroke:"var(--action-main-svg,  rgb(255, 255, 255))","stroke-opacity":"0.64","stroke-linecap":"round","stroke-linejoin":"round"}),(0,n.jsx)("path",{d:"M12.8569 16.2859L14.5712 9.42871",stroke:"var(--action-main-svg,  rgb(255, 255, 255))","stroke-opacity":"0.64","stroke-linecap":"round","stroke-linejoin":"round"}),(0,n.jsx)("path",{d:"M23.143 16.2859L21.4287 9.42871",stroke:"var(--action-main-svg,  rgb(255, 255, 255))","stroke-opacity":"0.64","stroke-linecap":"round","stroke-linejoin":"round"}),(0,n.jsx)("path",{d:"M6 14.5718H30",stroke:"var(--action-main-svg,  rgb(255, 255, 255))","stroke-opacity":"0.64","stroke-linecap":"round","stroke-linejoin":"round"})]})})}),i&&(0,n.jsx)("div",{className:"header-member-link",children:(0,n.jsx)("a",{href:i,children:"Member Area"})})]})]})})]})},save:function({attributes:r}){const{memberLink:o,cartLink:s}=r;return(0,n.jsx)("div",{...e.useBlockProps.save(),children:(0,n.jsxs)("div",{className:"inner-header",children:[(0,n.jsx)(e.InnerBlocks.Content,{}),(0,n.jsxs)("div",{className:"right-section",children:[(0,n.jsx)("div",{className:"header-search",children:(0,n.jsxs)("svg",{width:"24",height:"24",viewBox:"0 0 24 24",fill:"none",xmlns:"http://www.w3.org/2000/svg",children:[(0,n.jsx)("path",{d:"M22.29 21.66L17.61 16.95C20.97 13.2 20.7 7.44002 16.95 4.05002C13.2 0.660021 7.44002 0.960021 4.05002 4.71002C0.660021 8.46002 0.960021 14.22 4.71002 17.61C8.19002 20.76 13.5 20.76 16.98 17.61L21.69 22.32L22.29 21.66ZM10.83 19.05C6.30002 19.05 2.61002 15.36 2.61002 10.83C2.61002 6.27002 6.30002 2.61002 10.83 2.61002C15.36 2.61002 19.05 6.30002 19.05 10.83C19.05 15.36 15.36 19.05 10.83 19.05Z",fill:"var(--action-main-svg,  rgb(255, 255, 255))","fill-opacity":"0.64"}),(0,n.jsx)("path",{d:"M10.8301 3.83984V4.73984C14.1901 4.73984 16.9201 7.46984 16.9201 10.8298H17.8201C17.8201 6.95984 14.7001 3.83984 10.8301 3.83984Z",fill:"var(--action-main-svg,  rgb(255, 255, 255))","fill-opacity":"0.64"})]})}),(0,n.jsx)("div",{className:"header-mode-switcher",children:(0,n.jsxs)("svg",{width:"36",height:"36",viewBox:"0 0 36 36",fill:"none",xmlns:"http://www.w3.org/2000/svg",children:[(0,n.jsx)("path",{d:"M21 24V12",stroke:"var(--action-main-svg,  rgb(255, 255, 255))","stroke-opacity":"0.64","stroke-linecap":"round","stroke-linejoin":"round"}),(0,n.jsx)("path",{d:"M9 18H12",stroke:"var(--action-main-svg,  rgb(255, 255, 255))","stroke-opacity":"0.64","stroke-linecap":"round","stroke-linejoin":"round"}),(0,n.jsx)("path",{d:"M12.5098 9.51025L14.6398 11.6403",stroke:"var(--action-main-svg,  rgb(255, 255, 255))","stroke-opacity":"0.64","stroke-linecap":"round","stroke-linejoin":"round"}),(0,n.jsx)("path",{d:"M21 6V9",stroke:"var(--action-main-svg,  rgb(255, 255, 255))","stroke-opacity":"0.64","stroke-linecap":"round","stroke-linejoin":"round"}),(0,n.jsx)("path",{d:"M21 30V27",stroke:"var(--action-main-svg,  rgb(255, 255, 255))","stroke-opacity":"0.64","stroke-linecap":"round","stroke-linejoin":"round"}),(0,n.jsx)("path",{d:"M12.5098 26.4899L14.6398 24.3599",stroke:"var(--action-main-svg,  rgb(255, 255, 255))","stroke-opacity":"0.64","stroke-linecap":"round","stroke-linejoin":"round"}),(0,n.jsx)("path",{d:"M21 24C24.3137 24 27 21.3137 27 18C27 14.6863 24.3137 12 21 12C17.6863 12 15 14.6863 15 18C15 21.3137 17.6863 24 21 24Z",stroke:"var(--action-main-svg,  rgb(255, 255, 255))","stroke-opacity":"0.64","stroke-linecap":"round","stroke-linejoin":"round"})]})}),s&&(0,n.jsx)("div",{className:"header-cart-link",children:(0,n.jsx)("a",{href:s,children:(0,n.jsxs)("svg",{width:"36",height:"36",viewBox:"0 0 36 36",fill:"none",xmlns:"http://www.w3.org/2000/svg",children:[(0,n.jsx)("path",{d:"M7.71436 14.5718L9.42864 26.5718H26.5715L28.2858 14.5718",stroke:"var(--action-main-svg,  rgb(255, 255, 255))","stroke-opacity":"0.64","stroke-linecap":"round","stroke-linejoin":"round"}),(0,n.jsx)("path",{d:"M12.8569 16.2859L14.5712 9.42871",stroke:"var(--action-main-svg,  rgb(255, 255, 255))","stroke-opacity":"0.64","stroke-linecap":"round","stroke-linejoin":"round"}),(0,n.jsx)("path",{d:"M23.143 16.2859L21.4287 9.42871",stroke:"var(--action-main-svg,  rgb(255, 255, 255))","stroke-opacity":"0.64","stroke-linecap":"round","stroke-linejoin":"round"}),(0,n.jsx)("path",{d:"M6 14.5718H30",stroke:"var(--action-main-svg,  rgb(255, 255, 255))","stroke-opacity":"0.64","stroke-linecap":"round","stroke-linejoin":"round"})]})})}),o&&(0,n.jsx)("div",{className:"header-member-link",children:(0,n.jsx)("a",{href:o,children:"Member Area"})})]})]})})}})}},o={};function n(r){var s=o[r];if(void 0!==s)return s.exports;var i=o[r]={exports:{}};return e[r](i,i.exports,n),i.exports}n.m=e,r=[],n.O=(e,o,s,i)=>{if(!o){var t=1/0;for(d=0;d<r.length;d++){for(var[o,s,i]=r[d],a=!0,l=0;l<o.length;l++)(!1&i||t>=i)&&Object.keys(n.O).every((r=>n.O[r](o[l])))?o.splice(l--,1):(a=!1,i<t&&(t=i));if(a){r.splice(d--,1);var c=s();void 0!==c&&(e=c)}}return e}i=i||0;for(var d=r.length;d>0&&r[d-1][2]>i;d--)r[d]=r[d-1];r[d]=[o,s,i]},n.o=(r,e)=>Object.prototype.hasOwnProperty.call(r,e),(()=>{var r={665:0,309:0};n.O.j=e=>0===r[e];var e=(e,o)=>{var s,i,[t,a,l]=o,c=0;if(t.some((e=>0!==r[e]))){for(s in a)n.o(a,s)&&(n.m[s]=a[s]);if(l)var d=l(n)}for(e&&e(o);c<t.length;c++)i=t[c],n.o(r,i)&&r[i]&&r[i][0](),r[i]=0;return n.O(d)},o=globalThis.webpackChunkblocks_gamestore=globalThis.webpackChunkblocks_gamestore||[];o.forEach(e.bind(null,0)),o.push=e.bind(null,o.push.bind(o))})();var s=n.O(void 0,[309],(()=>n(13)));s=n.O(s)})();
+/******/ (() => { // webpackBootstrap
+/******/ 	"use strict";
+/******/ 	var __webpack_modules__ = ({
+
+/***/ "./src/block-header/block.json":
+/*!*************************************!*\
+  !*** ./src/block-header/block.json ***!
+  \*************************************/
+/***/ ((module) => {
+
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"blocks-gamestore/block-header","version":"0.1.0","title":"Header","category":"gamestore","icon":"layout","description":"Site header block","supports":{"html":false},"attributes":{"memberLink":{"type":"string","default":""},"cartLink":{"type":"string","default":""}},"textdomain":"blocks-gamestore","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","viewScript":"file:./view.js"}');
+
+/***/ }),
+
+/***/ "./src/block-header/edit.js":
+/*!**********************************!*\
+  !*** ./src/block-header/edit.js ***!
+  \**********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ Edit)
+/* harmony export */ });
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./editor.scss */ "./src/block-header/editor.scss");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__);
+
+
+
+
+function Edit({
+  attributes,
+  setAttributes
+}) {
+  const {
+    memberLink,
+    cartLink
+  } = attributes;
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.Fragment, {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.InspectorControls, {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
+        title: "Header Link",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.TextControl, {
+          label: "Member Link",
+          value: memberLink,
+          onChange: memberLink => setAttributes({
+            memberLink
+          })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.TextControl, {
+          label: "Cart Link",
+          value: cartLink,
+          onChange: cartLink => setAttributes({
+            cartLink
+          })
+        })]
+      })
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+      ...(0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.useBlockProps)(),
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+        className: "inner-header",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.InnerBlocks, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+          className: "right-section",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+            className: "header-search",
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("svg", {
+              width: "24",
+              height: "24",
+              viewBox: "0 0 24 24",
+              fill: "none",
+              xmlns: "http://www.w3.org/2000/svg",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("path", {
+                d: "M22.29 21.66L17.61 16.95C20.97 13.2 20.7 7.44002 16.95 4.05002C13.2 0.660021 7.44002 0.960021 4.05002 4.71002C0.660021 8.46002 0.960021 14.22 4.71002 17.61C8.19002 20.76 13.5 20.76 16.98 17.61L21.69 22.32L22.29 21.66ZM10.83 19.05C6.30002 19.05 2.61002 15.36 2.61002 10.83C2.61002 6.27002 6.30002 2.61002 10.83 2.61002C15.36 2.61002 19.05 6.30002 19.05 10.83C19.05 15.36 15.36 19.05 10.83 19.05Z",
+                fill: "var(--action-main-svg,  rgb(255, 255, 255))",
+                "fill-opacity": "0.64"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("path", {
+                d: "M10.8301 3.83984V4.73984C14.1901 4.73984 16.9201 7.46984 16.9201 10.8298H17.8201C17.8201 6.95984 14.7001 3.83984 10.8301 3.83984Z",
+                fill: "var(--action-main-svg,  rgb(255, 255, 255))",
+                "fill-opacity": "0.64"
+              })]
+            })
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+            className: "header-mode-switcher",
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("svg", {
+              width: "36",
+              height: "36",
+              viewBox: "0 0 36 36",
+              fill: "none",
+              xmlns: "http://www.w3.org/2000/svg",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("path", {
+                d: "M21 24V12",
+                stroke: "var(--action-main-svg,  rgb(255, 255, 255))",
+                "stroke-opacity": "0.64",
+                "stroke-linecap": "round",
+                "stroke-linejoin": "round"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("path", {
+                d: "M9 18H12",
+                stroke: "var(--action-main-svg,  rgb(255, 255, 255))",
+                "stroke-opacity": "0.64",
+                "stroke-linecap": "round",
+                "stroke-linejoin": "round"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("path", {
+                d: "M12.5098 9.51025L14.6398 11.6403",
+                stroke: "var(--action-main-svg,  rgb(255, 255, 255))",
+                "stroke-opacity": "0.64",
+                "stroke-linecap": "round",
+                "stroke-linejoin": "round"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("path", {
+                d: "M21 6V9",
+                stroke: "var(--action-main-svg,  rgb(255, 255, 255))",
+                "stroke-opacity": "0.64",
+                "stroke-linecap": "round",
+                "stroke-linejoin": "round"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("path", {
+                d: "M21 30V27",
+                stroke: "var(--action-main-svg,  rgb(255, 255, 255))",
+                "stroke-opacity": "0.64",
+                "stroke-linecap": "round",
+                "stroke-linejoin": "round"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("path", {
+                d: "M12.5098 26.4899L14.6398 24.3599",
+                stroke: "var(--action-main-svg,  rgb(255, 255, 255))",
+                "stroke-opacity": "0.64",
+                "stroke-linecap": "round",
+                "stroke-linejoin": "round"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("path", {
+                d: "M21 24C24.3137 24 27 21.3137 27 18C27 14.6863 24.3137 12 21 12C17.6863 12 15 14.6863 15 18C15 21.3137 17.6863 24 21 24Z",
+                stroke: "var(--action-main-svg,  rgb(255, 255, 255))",
+                "stroke-opacity": "0.64",
+                "stroke-linecap": "round",
+                "stroke-linejoin": "round"
+              })]
+            })
+          }), cartLink && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+            className: "header-cart-link",
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("a", {
+              href: cartLink,
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("svg", {
+                width: "36",
+                height: "36",
+                viewBox: "0 0 36 36",
+                fill: "none",
+                xmlns: "http://www.w3.org/2000/svg",
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("path", {
+                  d: "M7.71436 14.5718L9.42864 26.5718H26.5715L28.2858 14.5718",
+                  stroke: "var(--action-main-svg,  rgb(255, 255, 255))",
+                  "stroke-opacity": "0.64",
+                  "stroke-linecap": "round",
+                  "stroke-linejoin": "round"
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("path", {
+                  d: "M12.8569 16.2859L14.5712 9.42871",
+                  stroke: "var(--action-main-svg,  rgb(255, 255, 255))",
+                  "stroke-opacity": "0.64",
+                  "stroke-linecap": "round",
+                  "stroke-linejoin": "round"
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("path", {
+                  d: "M23.143 16.2859L21.4287 9.42871",
+                  stroke: "var(--action-main-svg,  rgb(255, 255, 255))",
+                  "stroke-opacity": "0.64",
+                  "stroke-linecap": "round",
+                  "stroke-linejoin": "round"
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("path", {
+                  d: "M6 14.5718H30",
+                  stroke: "var(--action-main-svg,  rgb(255, 255, 255))",
+                  "stroke-opacity": "0.64",
+                  "stroke-linecap": "round",
+                  "stroke-linejoin": "round"
+                })]
+              })
+            })
+          }), memberLink && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+            className: "header-member-link",
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("a", {
+              href: memberLink,
+              children: "Member Area"
+            })
+          })]
+        })]
+      })
+    })]
+  });
+}
+
+/***/ }),
+
+/***/ "./src/block-header/editor.scss":
+/*!**************************************!*\
+  !*** ./src/block-header/editor.scss ***!
+  \**************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
+/***/ "./src/block-header/index.js":
+/*!***********************************!*\
+  !*** ./src/block-header/index.js ***!
+  \***********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/blocks */ "@wordpress/blocks");
+/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./style.scss */ "./src/block-header/style.scss");
+/* harmony import */ var _edit__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./edit */ "./src/block-header/edit.js");
+/* harmony import */ var _save__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./save */ "./src/block-header/save.js");
+/* harmony import */ var _block_json__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./block.json */ "./src/block-header/block.json");
+
+
+
+
+
+(0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__.registerBlockType)(_block_json__WEBPACK_IMPORTED_MODULE_4__.name, {
+  edit: _edit__WEBPACK_IMPORTED_MODULE_2__["default"],
+  save: _save__WEBPACK_IMPORTED_MODULE_3__["default"]
+});
+
+/***/ }),
+
+/***/ "./src/block-header/save.js":
+/*!**********************************!*\
+  !*** ./src/block-header/save.js ***!
+  \**********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ save)
+/* harmony export */ });
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__);
+
+
+function save({
+  attributes
+}) {
+  const {
+    memberLink,
+    cartLink
+  } = attributes;
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+    ..._wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.useBlockProps.save(),
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+      className: "inner-header",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.InnerBlocks.Content, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+        className: "right-section",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+          className: "header-search",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("svg", {
+            width: "24",
+            height: "24",
+            viewBox: "0 0 24 24",
+            fill: "none",
+            xmlns: "http://www.w3.org/2000/svg",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+              d: "M22.29 21.66L17.61 16.95C20.97 13.2 20.7 7.44002 16.95 4.05002C13.2 0.660021 7.44002 0.960021 4.05002 4.71002C0.660021 8.46002 0.960021 14.22 4.71002 17.61C8.19002 20.76 13.5 20.76 16.98 17.61L21.69 22.32L22.29 21.66ZM10.83 19.05C6.30002 19.05 2.61002 15.36 2.61002 10.83C2.61002 6.27002 6.30002 2.61002 10.83 2.61002C15.36 2.61002 19.05 6.30002 19.05 10.83C19.05 15.36 15.36 19.05 10.83 19.05Z",
+              fill: "var(--action-main-svg,  rgb(255, 255, 255))",
+              "fill-opacity": "0.64"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+              d: "M10.8301 3.83984V4.73984C14.1901 4.73984 16.9201 7.46984 16.9201 10.8298H17.8201C17.8201 6.95984 14.7001 3.83984 10.8301 3.83984Z",
+              fill: "var(--action-main-svg,  rgb(255, 255, 255))",
+              "fill-opacity": "0.64"
+            })]
+          })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+          className: "header-mode-switcher",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("svg", {
+            width: "36",
+            height: "36",
+            viewBox: "0 0 36 36",
+            fill: "none",
+            xmlns: "http://www.w3.org/2000/svg",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+              d: "M21 24V12",
+              stroke: "var(--action-main-svg,  rgb(255, 255, 255))",
+              "stroke-opacity": "0.64",
+              "stroke-linecap": "round",
+              "stroke-linejoin": "round"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+              d: "M9 18H12",
+              stroke: "var(--action-main-svg,  rgb(255, 255, 255))",
+              "stroke-opacity": "0.64",
+              "stroke-linecap": "round",
+              "stroke-linejoin": "round"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+              d: "M12.5098 9.51025L14.6398 11.6403",
+              stroke: "var(--action-main-svg,  rgb(255, 255, 255))",
+              "stroke-opacity": "0.64",
+              "stroke-linecap": "round",
+              "stroke-linejoin": "round"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+              d: "M21 6V9",
+              stroke: "var(--action-main-svg,  rgb(255, 255, 255))",
+              "stroke-opacity": "0.64",
+              "stroke-linecap": "round",
+              "stroke-linejoin": "round"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+              d: "M21 30V27",
+              stroke: "var(--action-main-svg,  rgb(255, 255, 255))",
+              "stroke-opacity": "0.64",
+              "stroke-linecap": "round",
+              "stroke-linejoin": "round"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+              d: "M12.5098 26.4899L14.6398 24.3599",
+              stroke: "var(--action-main-svg,  rgb(255, 255, 255))",
+              "stroke-opacity": "0.64",
+              "stroke-linecap": "round",
+              "stroke-linejoin": "round"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+              d: "M21 24C24.3137 24 27 21.3137 27 18C27 14.6863 24.3137 12 21 12C17.6863 12 15 14.6863 15 18C15 21.3137 17.6863 24 21 24Z",
+              stroke: "var(--action-main-svg,  rgb(255, 255, 255))",
+              "stroke-opacity": "0.64",
+              "stroke-linecap": "round",
+              "stroke-linejoin": "round"
+            })]
+          })
+        }), cartLink && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+          className: "header-cart-link",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("a", {
+            href: cartLink,
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("svg", {
+              width: "36",
+              height: "36",
+              viewBox: "0 0 36 36",
+              fill: "none",
+              xmlns: "http://www.w3.org/2000/svg",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+                d: "M7.71436 14.5718L9.42864 26.5718H26.5715L28.2858 14.5718",
+                stroke: "var(--action-main-svg,  rgb(255, 255, 255))",
+                "stroke-opacity": "0.64",
+                "stroke-linecap": "round",
+                "stroke-linejoin": "round"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+                d: "M12.8569 16.2859L14.5712 9.42871",
+                stroke: "var(--action-main-svg,  rgb(255, 255, 255))",
+                "stroke-opacity": "0.64",
+                "stroke-linecap": "round",
+                "stroke-linejoin": "round"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+                d: "M23.143 16.2859L21.4287 9.42871",
+                stroke: "var(--action-main-svg,  rgb(255, 255, 255))",
+                "stroke-opacity": "0.64",
+                "stroke-linecap": "round",
+                "stroke-linejoin": "round"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+                d: "M6 14.5718H30",
+                stroke: "var(--action-main-svg,  rgb(255, 255, 255))",
+                "stroke-opacity": "0.64",
+                "stroke-linecap": "round",
+                "stroke-linejoin": "round"
+              })]
+            })
+          })
+        }), memberLink && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+          className: "header-member-link",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("a", {
+            href: memberLink,
+            children: "Member Area"
+          })
+        })]
+      })]
+    })
+  });
+}
+
+/***/ }),
+
+/***/ "./src/block-header/style.scss":
+/*!*************************************!*\
+  !*** ./src/block-header/style.scss ***!
+  \*************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
+/***/ "@wordpress/block-editor":
+/*!*************************************!*\
+  !*** external ["wp","blockEditor"] ***!
+  \*************************************/
+/***/ ((module) => {
+
+module.exports = window["wp"]["blockEditor"];
+
+/***/ }),
+
+/***/ "@wordpress/blocks":
+/*!********************************!*\
+  !*** external ["wp","blocks"] ***!
+  \********************************/
+/***/ ((module) => {
+
+module.exports = window["wp"]["blocks"];
+
+/***/ }),
+
+/***/ "@wordpress/components":
+/*!************************************!*\
+  !*** external ["wp","components"] ***!
+  \************************************/
+/***/ ((module) => {
+
+module.exports = window["wp"]["components"];
+
+/***/ }),
+
+/***/ "react/jsx-runtime":
+/*!**********************************!*\
+  !*** external "ReactJSXRuntime" ***!
+  \**********************************/
+/***/ ((module) => {
+
+module.exports = window["ReactJSXRuntime"];
+
+/***/ })
+
+/******/ 	});
+/************************************************************************/
+/******/ 	// The module cache
+/******/ 	var __webpack_module_cache__ = {};
+/******/ 	
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/ 		// Check if module is in cache
+/******/ 		var cachedModule = __webpack_module_cache__[moduleId];
+/******/ 		if (cachedModule !== undefined) {
+/******/ 			return cachedModule.exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = __webpack_module_cache__[moduleId] = {
+/******/ 			// no module.id needed
+/******/ 			// no module.loaded needed
+/******/ 			exports: {}
+/******/ 		};
+/******/ 	
+/******/ 		// Execute the module function
+/******/ 		__webpack_modules__[moduleId](module, module.exports, __webpack_require__);
+/******/ 	
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/ 	
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = __webpack_modules__;
+/******/ 	
+/************************************************************************/
+/******/ 	/* webpack/runtime/chunk loaded */
+/******/ 	(() => {
+/******/ 		var deferred = [];
+/******/ 		__webpack_require__.O = (result, chunkIds, fn, priority) => {
+/******/ 			if(chunkIds) {
+/******/ 				priority = priority || 0;
+/******/ 				for(var i = deferred.length; i > 0 && deferred[i - 1][2] > priority; i--) deferred[i] = deferred[i - 1];
+/******/ 				deferred[i] = [chunkIds, fn, priority];
+/******/ 				return;
+/******/ 			}
+/******/ 			var notFulfilled = Infinity;
+/******/ 			for (var i = 0; i < deferred.length; i++) {
+/******/ 				var [chunkIds, fn, priority] = deferred[i];
+/******/ 				var fulfilled = true;
+/******/ 				for (var j = 0; j < chunkIds.length; j++) {
+/******/ 					if ((priority & 1 === 0 || notFulfilled >= priority) && Object.keys(__webpack_require__.O).every((key) => (__webpack_require__.O[key](chunkIds[j])))) {
+/******/ 						chunkIds.splice(j--, 1);
+/******/ 					} else {
+/******/ 						fulfilled = false;
+/******/ 						if(priority < notFulfilled) notFulfilled = priority;
+/******/ 					}
+/******/ 				}
+/******/ 				if(fulfilled) {
+/******/ 					deferred.splice(i--, 1)
+/******/ 					var r = fn();
+/******/ 					if (r !== undefined) result = r;
+/******/ 				}
+/******/ 			}
+/******/ 			return result;
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/compat get default export */
+/******/ 	(() => {
+/******/ 		// getDefaultExport function for compatibility with non-harmony modules
+/******/ 		__webpack_require__.n = (module) => {
+/******/ 			var getter = module && module.__esModule ?
+/******/ 				() => (module['default']) :
+/******/ 				() => (module);
+/******/ 			__webpack_require__.d(getter, { a: getter });
+/******/ 			return getter;
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/define property getters */
+/******/ 	(() => {
+/******/ 		// define getter functions for harmony exports
+/******/ 		__webpack_require__.d = (exports, definition) => {
+/******/ 			for(var key in definition) {
+/******/ 				if(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
+/******/ 					Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
+/******/ 				}
+/******/ 			}
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/hasOwnProperty shorthand */
+/******/ 	(() => {
+/******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/make namespace object */
+/******/ 	(() => {
+/******/ 		// define __esModule on exports
+/******/ 		__webpack_require__.r = (exports) => {
+/******/ 			if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 				Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 			}
+/******/ 			Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/jsonp chunk loading */
+/******/ 	(() => {
+/******/ 		// no baseURI
+/******/ 		
+/******/ 		// object to store loaded and loading chunks
+/******/ 		// undefined = chunk not loaded, null = chunk preloaded/prefetched
+/******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
+/******/ 		var installedChunks = {
+/******/ 			"block-header/index": 0,
+/******/ 			"block-header/style-index": 0
+/******/ 		};
+/******/ 		
+/******/ 		// no chunk on demand loading
+/******/ 		
+/******/ 		// no prefetching
+/******/ 		
+/******/ 		// no preloaded
+/******/ 		
+/******/ 		// no HMR
+/******/ 		
+/******/ 		// no HMR manifest
+/******/ 		
+/******/ 		__webpack_require__.O.j = (chunkId) => (installedChunks[chunkId] === 0);
+/******/ 		
+/******/ 		// install a JSONP callback for chunk loading
+/******/ 		var webpackJsonpCallback = (parentChunkLoadingFunction, data) => {
+/******/ 			var [chunkIds, moreModules, runtime] = data;
+/******/ 			// add "moreModules" to the modules object,
+/******/ 			// then flag all "chunkIds" as loaded and fire callback
+/******/ 			var moduleId, chunkId, i = 0;
+/******/ 			if(chunkIds.some((id) => (installedChunks[id] !== 0))) {
+/******/ 				for(moduleId in moreModules) {
+/******/ 					if(__webpack_require__.o(moreModules, moduleId)) {
+/******/ 						__webpack_require__.m[moduleId] = moreModules[moduleId];
+/******/ 					}
+/******/ 				}
+/******/ 				if(runtime) var result = runtime(__webpack_require__);
+/******/ 			}
+/******/ 			if(parentChunkLoadingFunction) parentChunkLoadingFunction(data);
+/******/ 			for(;i < chunkIds.length; i++) {
+/******/ 				chunkId = chunkIds[i];
+/******/ 				if(__webpack_require__.o(installedChunks, chunkId) && installedChunks[chunkId]) {
+/******/ 					installedChunks[chunkId][0]();
+/******/ 				}
+/******/ 				installedChunks[chunkId] = 0;
+/******/ 			}
+/******/ 			return __webpack_require__.O(result);
+/******/ 		}
+/******/ 		
+/******/ 		var chunkLoadingGlobal = globalThis["webpackChunkblocks_gamestore"] = globalThis["webpackChunkblocks_gamestore"] || [];
+/******/ 		chunkLoadingGlobal.forEach(webpackJsonpCallback.bind(null, 0));
+/******/ 		chunkLoadingGlobal.push = webpackJsonpCallback.bind(null, chunkLoadingGlobal.push.bind(chunkLoadingGlobal));
+/******/ 	})();
+/******/ 	
+/************************************************************************/
+/******/ 	
+/******/ 	// startup
+/******/ 	// Load entry module and return exports
+/******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["block-header/style-index"], () => (__webpack_require__("./src/block-header/index.js")))
+/******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
+/******/ 	
+/******/ })()
+;
+//# sourceMappingURL=index.js.map
