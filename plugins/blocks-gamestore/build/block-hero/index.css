@@ -1,1 +1,59 @@
-.hero-button{align-items:center;background:var(--accent-gradient,linear-gradient(90deg,#3dafe2 0,#6f76c0 100%));border-radius:5px;color:#fff;display:inline-flex;font-size:14px;font-style:normal;font-weight:700;justify-content:center;letter-spacing:.15em;line-height:1;padding:20px 32px;text-decoration:none;text-transform:uppercase;transition:all .3s ease-in-out}.hero-button.shadow{box-shadow:0 16px 24px 0 var(--blue-48,rgba(61,175,226,.48))}.hero-button:hover{background:linear-gradient(90deg,#6f76c0,#555ba5)}.hero-button:hover.shadow{box-shadow:0 8px 12px -6px var(--blue-48,rgba(61,175,226,.48))}.wp-block-blocks-gamestore-block-hero .hero-content .hero-title{line-height:1.2}.wp-block-blocks-gamestore-block-hero .hero-content .hero-title,.wp-block-blocks-gamestore-block-hero .hero-content p{margin-bottom:0;margin-top:0}.is-root-container.is-desktop-preview{overflow:hidden}.slide-item-image p{font-weight:700;margin-bottom:8px!important;margin-top:16px!important}.slide-item-image .image-box{align-items:center;background:#bebaba;display:flex;justify-content:center;margin-bottom:16px!important;padding:5px}
+/*!***************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/block-hero/editor.scss ***!
+  \***************************************************************************************************************************************************************************************************************************************************/
+.hero-button {
+  border-radius: 5px;
+  padding: 20px 32px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 14px;
+  line-height: 1;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #fff;
+  background: var(--accent-gradient, linear-gradient(90deg, #3dafe2 0%, #6f76c0 100%));
+  transition: all 0.3s ease-in-out;
+}
+.hero-button.shadow {
+  box-shadow: 0 16px 24px 0 var(--blue-48, rgba(61, 175, 226, 0.48));
+}
+.hero-button:hover {
+  background: linear-gradient(90deg, #6f76c0 0%, #555ba5 100%);
+}
+.hero-button:hover.shadow {
+  box-shadow: 0 8px 12px -6px var(--blue-48, rgba(61, 175, 226, 0.48));
+}
+
+.wp-block-blocks-gamestore-block-hero .hero-content .hero-title {
+  line-height: 1.2;
+}
+
+.wp-block-blocks-gamestore-block-hero .hero-content .hero-title,
+.wp-block-blocks-gamestore-block-hero .hero-content p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.is-root-container.is-desktop-preview {
+  overflow: hidden;
+}
+
+.slide-item-image p {
+  font-weight: 700;
+  margin-top: 16px !important;
+  margin-bottom: 8px !important;
+}
+.slide-item-image .image-box {
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #bebaba;
+  margin-bottom: 16px !important;
+}
+
+/*# sourceMappingURL=index.css.map*/
