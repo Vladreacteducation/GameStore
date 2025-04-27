@@ -199,3 +199,25 @@ function view_block_recent_news($attributes) {
 
     return $output;
 }
+
+function view_block_subscribe($attributes) {
+    // $transient_key = 'subscribe_block_' . md5(serialize($attributes));
+    // $cached_output = get_transient($transient_key);
+    // if ($cached_output) return $cached_output;
+
+    $image_bg = (!empty($attributes['image']) ? 'style="background-image: url(' . esc_url($attributes['image']) . ');"' : '');
+
+    ob_start();
+    echo '<div ' . get_block_wrapper_attributes(array('class'=> 'alignfull')). $image_bg . '>';
+   echo '<div class="subscribe-inner wrapper">';
+   echo '<h2 class="subscribe-title">' . ($attributes['title']) . '</h2>';
+   echo '<p class="subscribe-description">' . ($attributes['description']) . '</p>';
+   echo '<div class="subscribe-shortcode">' . do_shortcode(($attributes['shortcode'])) . '</div>';
+
+    echo '</div>';
+    echo '</div>';
+    $output = ob_get_clean();
+    // set_transient($transient_key, $output, 5 * MINUTE_IN_SECONDS);
+
+    return $output;
+}  
