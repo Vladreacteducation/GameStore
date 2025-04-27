@@ -1,0 +1,58 @@
+:root{
+    --background-default:#fafafa;
+    --background-80: rgba(250, 250, 250, 0.8);
+    --action-main: rgba(14, 13, 15, 0.64);
+    --action-main-svg: rgb(14, 13, 15);
+    --divider-main: rgba(14, 13, 15, 0.08);
+    --text-primary: #0E0D0F;
+    --text-secondary: rgba(14, 13, 15, 0.7);
+    --secondary-48: rgba(255, 255, 255, 0.48);
+    --white-contrast : #0a090a;
+    --purple-main: #6f76C0;
+    --mobile-menu:#fafafa; 
+    --mask-gradient: linear-gradient(270deg, rgba(14, 13, 15, 0) 0%, #ececec 79.5%);
+    --mask-gradient-second: linear-gradient(180deg, rgba(250, 250, 250, 0) 0%, #fafafa 100%);
+    --accent-gradient: linear-gradient(90deg, #3dafe2 0%, #6f76c0 100%);
+    --blue-48: rgba(61, 175, 226, 0.48);
+    }   
+
+    .wrapper{
+        width: 100%;
+        max-width: 1540px;
+        margin-left: auto;
+        margin-right: auto
+      }    
+
+
+      
+h1,h2,h3,h4,h5,h6{
+    font-style: normal;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-top: 0;
+  }
+  
+  h1{
+    font-size: clamp(2.5rem, calc(2.11rem + 1.97vw), 4rem);
+  }
+  
+  h2{
+    font-size: clamp(2.25rem, calc(1.95rem + 1.48vw), 3.38rem);
+  }
+  
+  h3 {
+    font-size: clamp(1.75rem, calc(1.65rem + 0.49vw), 2.13rem); 
+  }
+  
+  h4 {
+    font-size: clamp(1.5rem, calc(1.4rem + 0.45vw), 1.88rem);
+  }
+  
+  h5 {
+    font-size: clamp(1.25rem, calc(1.15rem + 0.45vw), 1.63rem);
+  }
+  
+  h6 {
+    font-size: clamp(1rem, calc(0.95rem + 0.4vw), 1.38rem);
+  }
+  

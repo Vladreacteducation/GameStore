@@ -52,3 +52,84 @@ function game_store_disable_svg_rendering() {
     echo '<style>img[src$=".svg"] { width: auto; height: auto; }</style>';
 }
 add_action('admin_head', 'game_store_disable_svg_rendering');
+
+
+
+// Add custom post type News
+
+// Register Custom Post Type: News
+function gamestore_register_news_post_type() {
+    $labels = array(
+        'name'               => _x('News', 'Post Type General Name', 'gamestore'),
+        'singular_name'      => _x('News', 'Post Type Singular Name', 'gamestore'),
+        'menu_name'          => __('News', 'gamestore'),
+        'name_admin_bar'     => __('News', 'gamestore'),
+        'add_new'            => __('Add New', 'gamestore'),
+        'add_new_item'       => __('Add New News', 'gamestore'),
+        'edit_item'          => __('Edit News', 'gamestore'),
+        'new_item'           => __('New News', 'gamestore'),
+        'view_item'          => __('View News', 'gamestore'),
+        'search_items'       => __('Search News', 'gamestore'),
+        'not_found'          => __('No News Found', 'gamestore'),
+        'not_found_in_trash' => __('No News Found in Trash', 'gamestore'),
+    );
+
+    $args = array(
+        'label'               => __('News', 'gamestore'),
+        'description'         => __('News and updates', 'gamestore'),
+        'labels'              => $labels,
+        'supports'            => array('title', 'editor', 'thumbnail', 'excerpt', 'custom-fields'),
+        'taxonomies'          => array('news_category'),
+        'hierarchical'        => false,
+        'public'              => true,
+        'show_ui'             => true,
+        
+        'show_in_menu'        => true,
+        'menu_position'       => 5,
+        'menu_icon'           => 'dashicons-media-document',
+        'show_in_admin_bar'   => true,
+        'show_in_nav_menus'   => true,
+        'can_export'          => true,
+        'has_archive'         => true,
+        'exclude_from_search' => false,
+        'publicly_queryable'  => true,
+        'capability_type'     => 'post',
+        'show_in_rest'        => true, // Enable Gutenberg support
+    );
+
+    register_post_type('news', $args);
+}
+add_action('init', 'gamestore_register_news_post_type');
+
+// Register Custom Taxonomy: News Category
+function gamestore_register_news_category_taxonomy() {
+    $labels = array(
+        'name'              => _x('News Categories', 'Taxonomy General Name', 'gamestore'),
+        'singular_name'     => _x('News Category', 'Taxonomy Singular Name', 'gamestore'),
+        'menu_name'         => __('News Categories', 'gamestore'),
+        'all_items'         => __('All Categories', 'gamestore'),
+        'parent_item'       => __('Parent Category', 'gamestore'),
+        'parent_item_colon' => __('Parent Category:', 'gamestore'),
+        'new_item_name'     => __('New Category Name', 'gamestore'),
+        'add_new_item'      => __('Add New Category', 'gamestore'),
+        'edit_item'         => __('Edit Category', 'gamestore'),
+        'update_item'       => __('Update Category', 'gamestore'),
+        'view_item'         => __('View Category', 'gamestore'),
+        'search_items'      => __('Search Categories', 'gamestore'),
+        'not_found'         => __('No Categories Found', 'gamestore'),
+    );
+
+    $args = array(
+        'labels'            => $labels,
+        'hierarchical'      => true,
+        'public'            => true,
+        'show_ui'           => true,
+        'show_admin_column' => true,
+        'show_in_nav_menus' => true,
+        'show_tagcloud'     => true,
+        'show_in_rest'      => true, // Enable Gutenberg support
+    );
+
+    register_taxonomy('news_category', array('news'), $args);
+}
+add_action('init', 'gamestore_register_news_category_taxonomy');

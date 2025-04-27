@@ -6,6 +6,11 @@ function gamestroe_styles() {
 		get_template_directory_uri().'/assets/css/gamestore.css', [], wp_get_theme()->get( 'Version' ));
 	wp_enqueue_script('gamestore-theme-related', get_template_directory_uri().'/assets/js/gamestore-theme-related.js', [], wp_get_theme()->get( 'Version' ), true);
 
+   wp_localize_script('gamestore-theme-related', 'gamestore_params', array(
+
+		'ajaxurl' => admin_url('admin-ajax.php')
+   ));
+
 // Swiper Slider
 	wp_enqueue_style(
 		'swiper-bundle',
@@ -42,3 +47,17 @@ function gamestore_google_font_script() {
 }
 
 add_action('wp_enqueue_scripts', 'gamestore_google_font_script'); 
+
+
+// Load asssets in Gutenberg
+
+function gamestore_gutenberg_styles() {
+	// Load the Google Fonts stylesheet
+	wp_enqueue_style('gamestore-google-fonts', gamestore_google_fonts(), [], '1.0.0');
+
+	// Load the theme's editor styles
+
+	add_editor_style( '/assets/css/editor-style.css' );
+
+}
+add_action( 'enqueue_block_editor_assets', 'gamestore_gutenberg_styles' );
