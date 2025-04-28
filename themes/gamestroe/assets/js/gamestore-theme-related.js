@@ -149,7 +149,7 @@ searchInput.addEventListener('input', function () {
         });
     }
 
-function loadDefaultGames() {
+function loadDefaultGames() {  
 
     fetch(gamestore_params.ajaxurl, {
         method: "POST",
