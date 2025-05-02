@@ -57,7 +57,8 @@ function gamestore_gutenberg_styles() {
 
 	// Load the theme's editor styles
 
-	add_editor_style( '/assets/css/editor-style.css' );
+	add_editor_style( '/assets/css/editor-custom-style.css' );
 
 }
 add_action( 'enqueue_block_editor_assets', 'gamestore_gutenberg_styles' );
+

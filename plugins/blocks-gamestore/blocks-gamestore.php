@@ -49,6 +49,11 @@ function create_block_blocks_gamestore_block_init() {
 
     register_block_type( __DIR__ . '/build/block-subscribe',array(
         'render_callback' => 'view_block_subscribe'
-    )); 
+    ));  # реєстрація subscribe блоку
+
+
+    register_block_type( __DIR__ . '/build/block-featured-products',array(
+        'render_callback' => 'view_block_featured_products'
+    ));  # реєстрація featured products блоку
 }
 add_action( 'init', 'create_block_blocks_gamestore_block_init' );

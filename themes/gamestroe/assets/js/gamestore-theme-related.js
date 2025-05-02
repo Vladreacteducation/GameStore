@@ -134,6 +134,8 @@ searchInput.addEventListener('input', function () {
 
     function renderGames(games) {
         searchResults.innerHTML = "";
+
+        console.log(games);
         games.forEach(game => {
             const gameDiv = document.createElement('div');
             gameDiv.className = 'game-result';
@@ -143,6 +145,7 @@ searchInput.addEventListener('input', function () {
                <div class="game-meta">
               <div class="game-price"> ${game.price}</div>
                 <h3>${game.title}</h3>
+                <div class="game-platforms">${game.platforms}</div>
                </div>
              </a>`; // структура HTML для пошук
             searchResults.appendChild(gameDiv);

@@ -25,6 +25,8 @@ add_action( 'wp_footer', 'gamestore_footer_search_popup' );
 
 
 // Load latest 18 Games
+
+
 function load_latest_games(){
   $args = array(
     'post_type' => 'product',
@@ -42,12 +44,22 @@ $result = array();
     $games_query->the_post();
 
     $product = wc_get_product( get_the_ID() );
+    $platforms_html ='';
+    $platforms = array('Xbox' ,'PC', 'PlayStation');
+
+    foreach($platforms as $platform){
+  
+      $platforms_html.= (get_post_meta(get_the_ID(), '_platform_'. strtolower($platform), true)=='yes')?'<div class="platform_'. strtolower($platform).'"></div>':'';
+
+
+   }
 
     $result[]= array(
       'link'=> get_the_permalink(),
       'thumbnail' => $product->get_image('full'),
       'price' => $product->get_price_html(),
       'title' => get_the_title(),
+      'platforms' => $platforms_html
     );
    }
  }
@@ -58,11 +70,6 @@ wp_send_json_success($result);
 
 add_action( 'wp_ajax_load_latest_games', 'load_latest_games' );
 add_action( 'wp_ajax_nopriv_load_latest_games', 'load_latest_games' );
-
-
-
-
-
 
 
 
@@ -89,11 +96,19 @@ $result = array();
 
     $product = wc_get_product( get_the_ID() );
 
+    $platforms_html ='';
+    $platforms = array('Xbox' ,'PC', 'PlayStation');
+
+    foreach($platforms as $platform){
+      $platforms_html.= (get_post_meta(get_the_ID(), '_platform_'. strtolower($platform), true)=='yes')?'<div class="platform_'. strtolower($platform).'"></div>':'';
+   }
+
     $result[]= array(
       'link'=> get_the_permalink(),
       'thumbnail' => $product->get_image('full'),
       'price' => $product->get_price_html(),
       'title' => get_the_title(),
+      'platforms' => $platforms_html
     );
    }
  }
