@@ -8,6 +8,7 @@
   box-sizing: border-box;
   position: relative;
   background-repeat: no-repeat;
+  background-size: cover;
 }
 .wp-block-blocks-gamestore-subscribe::before {
   content: "";

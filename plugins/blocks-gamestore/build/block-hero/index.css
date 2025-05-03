@@ -56,4 +56,10 @@
   margin-bottom: 16px !important;
 }
 
+.swiper-wrapper img {
+  width: auto !important;
+  height: auto !important;
+  max-width: none !important;
+}
+
 /*# sourceMappingURL=index.css.map*/

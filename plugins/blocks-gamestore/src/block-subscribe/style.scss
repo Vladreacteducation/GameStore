@@ -6,6 +6,7 @@ padding-bottom: clamp(3.75rem, calc(2.77rem + 4.92vw), 7.5rem);
 box-sizing: border-box;
 position: relative;
 background-repeat: no-repeat;
+background-size: cover;
 
 &::before{
     content: "";
