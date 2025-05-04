@@ -57,5 +57,7 @@ function create_block_blocks_gamestore_block_init() {
     ));  # реєстрація featured products блоку
 
     register_block_type( __DIR__ . '/build/block-cta' ); # реєстрація block-cta блоку
+
+    register_block_type( __DIR__ . '/build/block-faq' ); # реєстрація faq блоку
 }
 add_action( 'init', 'create_block_blocks_gamestore_block_init' );
