@@ -55,5 +55,7 @@ function create_block_blocks_gamestore_block_init() {
     register_block_type( __DIR__ . '/build/block-featured-products',array(
         'render_callback' => 'view_block_featured_products'
     ));  # реєстрація featured products блоку
+
+    register_block_type( __DIR__ . '/build/block-cta' ); # реєстрація block-cta блоку
 }
 add_action( 'init', 'create_block_blocks_gamestore_block_init' );
