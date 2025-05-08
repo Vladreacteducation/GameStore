@@ -1,0 +1,1 @@
+{"version":3,"file":"block-footer/index.css","mappings":";;;AAAA;;EAEI;AACJ,C","sources":["webpack://blocks-gamestore/./src/block-footer/editor.scss"],"sourcesContent":[".link-repeater-item, \r\n.logo-repeater-item {\r\n    margin-bottom: 16px;\r\n}"],"names":[],"sourceRoot":""}
