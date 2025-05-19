@@ -1,0 +1,120 @@
+/*!*********************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/block-single-news/style.scss ***!
+  \*********************************************************************************************************************************************************************************************************************************************************/
+@charset "UTF-8";
+.wp-block-blocks-gamestore-single-news {
+  margin-top: 0;
+  margin-bottom: clamp(3.75rem, 2.77rem + 4.92vw, 7.5rem);
+}
+.wp-block-blocks-gamestore-single-news .featured-image-section {
+  margin-top: 0;
+  margin-bottom: clamp(3.75rem, 2.77rem + 4.92vw, 7.5rem);
+  box-sizing: border-box;
+  position: relative;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 440px;
+}
+.wp-block-blocks-gamestore-single-news .featured-image-section::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  background: var(--mask-gradient);
+}
+.wp-block-blocks-gamestore-single-news .featured-image-section .wrapper {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  padding-top: 65px;
+  gap: 24px;
+}
+.wp-block-blocks-gamestore-single-news .featured-image-section .wrapper h2 {
+  max-width: 1280px;
+}
+.wp-block-blocks-gamestore-single-news .featured-image-section .wrapper .news-meta {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 1;
+}
+.wp-block-blocks-gamestore-single-news .featured-image-section .wrapper .news-meta > div {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.wp-block-blocks-gamestore-single-news .news-container {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  gap: 48px;
+}
+.wp-block-blocks-gamestore-single-news .news-container .news-social-share {
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 2.1px;
+  text-transform: uppercase;
+}
+.wp-block-blocks-gamestore-single-news .news-container .news-social-share .social-share-buttons {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.wp-block-blocks-gamestore-single-news .news-container .news-social-share .social-share-buttons > a {
+  -webkit-backdrop-filter: blur(24px);
+          backdrop-filter: blur(24px);
+  background: var(--purple---main, #6F76C0);
+  border-radius: 12px;
+  padding: 8px;
+  width: 40px;
+  height: 40px;
+  font-size: 0;
+  line-height: 0;
+}
+.wp-block-blocks-gamestore-single-news .news-container .news-social-share .social-share-buttons > a::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: url("data:image/svg+xml,<svg width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M18.36 9.24195C18.36 9.31823 18.36 9.39134 18.36 9.46126C18.36 9.53119 18.36 9.60429 18.36 9.68057C18.36 10.7612 18.1565 11.8546 17.7497 12.9607C17.3429 14.0667 16.7453 15.0679 15.9571 15.9642C15.1688 16.8605 14.1963 17.5884 13.0393 18.1478C11.8824 18.7199 10.5475 19.006 9.03456 19.006C8.10647 19.006 7.21653 18.8756 6.36472 18.615C5.51291 18.3544 4.72468 17.9889 4 17.5185C4.13985 17.5439 4.27334 17.5566 4.40048 17.5566C4.52761 17.5566 4.6611 17.5566 4.80095 17.5566C5.56377 17.5566 6.29161 17.4358 6.9845 17.1943C7.6774 16.9527 8.30353 16.6095 8.86293 16.1645C8.15097 16.1518 7.5153 15.9325 6.9559 15.5066C6.3965 15.0806 6.00874 14.5435 5.79261 13.8951C5.89432 13.9078 5.9992 13.9205 6.10727 13.9333C6.21534 13.946 6.32022 13.9523 6.42193 13.9523C6.57449 13.9523 6.7207 13.9396 6.86055 13.9142C7.0004 13.8888 7.14025 13.8633 7.2801 13.8379C6.52999 13.6853 5.90386 13.3103 5.40167 12.7128C4.89948 12.1152 4.64839 11.416 4.64839 10.615V10.5769C4.87724 10.6913 5.11561 10.7866 5.36353 10.8629C5.61144 10.9392 5.86889 10.9837 6.13588 10.9964C5.6909 10.704 5.33492 10.3163 5.06794 9.83313C4.80095 9.35002 4.66746 8.82876 4.66746 8.26936C4.66746 7.96424 4.70878 7.67183 4.79142 7.39213C4.87406 7.11243 4.9853 6.85181 5.12515 6.61025C5.53198 7.10608 5.98331 7.55741 6.47914 7.96424C6.97497 8.37108 7.50894 8.7207 8.08105 9.01311C8.65316 9.30552 9.2634 9.54072 9.9118 9.71871C10.5475 9.8967 11.2022 10.0048 11.876 10.0429C11.8506 9.91577 11.8315 9.78863 11.8188 9.6615C11.8061 9.53436 11.7998 9.40723 11.7998 9.28009C11.7998 8.37743 12.1176 7.60509 12.7533 6.96305C13.389 6.32101 14.1645 6 15.0799 6C15.5503 6 15.9921 6.09535 16.4052 6.28605C16.8184 6.47676 17.1712 6.73103 17.4636 7.04886C17.8451 6.97258 18.2106 6.8677 18.5602 6.7342C18.9098 6.60071 19.2372 6.43861 19.5423 6.24791C19.4279 6.62932 19.2467 6.97576 18.9988 7.28724C18.7509 7.59873 18.4553 7.85618 18.112 8.05959C18.4426 8.02145 18.7668 7.95788 19.0846 7.86889C19.4025 7.77989 19.7076 7.67183 20 7.54469C19.7712 7.87525 19.5201 8.18355 19.2467 8.4696C18.9734 8.75566 18.6778 9.01311 18.36 9.24195Z\" fill=\"white\" /></svg>") center no-repeat;
+}
+.wp-block-blocks-gamestore-single-news .news-container .news-content {
+  width: calc(100% - 248px);
+}
+.wp-block-blocks-gamestore-single-news .news-container .news-content p, .wp-block-blocks-gamestore-single-news .news-container .news-content img {
+  margin-top: 24px;
+  margin-bottom: 24px;
+}
+.wp-block-blocks-gamestore-single-news .news-container .news-content p:first-child, .wp-block-blocks-gamestore-single-news .news-container .news-content img:first-child {
+  margin-top: 0;
+}
+.wp-block-blocks-gamestore-single-news .news-container .news-content p:last-child, .wp-block-blocks-gamestore-single-news .news-container .news-content img:last-child {
+  margin-bottom: 0;
+}
+.wp-block-blocks-gamestore-single-news .news-container .news-content a {
+  text-decoration: none;
+  color: var(--purple---main, #6F76C0);
+}
+.wp-block-blocks-gamestore-single-news .news-container .news-content ul, .wp-block-blocks-gamestore-single-news .news-container .news-content ol {
+  margin-left: 8px;
+}
+.wp-block-blocks-gamestore-single-news .news-container .news-content ul li:before {
+  content: "●";
+  margin-right: 8px;
+}
+.wp-block-blocks-gamestore-single-news .news-container .news-content img {
+  border-radius: 24px;
+}
+
+/*# sourceMappingURL=style-index.css.map*/
