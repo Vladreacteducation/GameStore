@@ -6,9 +6,6 @@ function view_block_games_line($attributes){
         return '<p>WooCommerce is not active.</p>';
     }
 
-    // $transient_key = 'games_line_block_' . md5(serialize($attributes));
-    // $cached_output = get_transient($transient_key);
-    // if ($cached_output) return $cached_output;
 
     $args = array(
         'post_type'      => 'product',
@@ -39,17 +36,13 @@ function view_block_games_line($attributes){
     wp_reset_postdata();
 
     $output = ob_get_clean();
-    // set_transient($transient_key, $output, MINUTE_IN_SECONDS);
-
+ 
     return $output;
 }
 
 
 function view_block_recent_news($attributes) {
-    // $transient_key = 'recent_news_block_' . md5(serialize($attributes));
-    // $cached_output = get_transient($transient_key);
-    // if ($cached_output) return $cached_output;
-
+   
     $args = array(
         'post_type'      => 'news',
         'posts_per_page' => $attributes['count'],
@@ -100,15 +93,11 @@ function view_block_recent_news($attributes) {
     wp_reset_postdata();
 
     $output = ob_get_clean();
-    // set_transient($transient_key, $output, 5 * MINUTE_IN_SECONDS);
 
     return $output;
 }
 
 function view_block_subscribe($attributes) {
-    // $transient_key = 'subscribe_block_' . md5(serialize($attributes));
-    // $cached_output = get_transient($transient_key);
-    // if ($cached_output) return $cached_output;
 
     $image_bg = (!empty($attributes['image']) ? 'style="background-image: url(' . esc_url($attributes['image']) . ');"' : '');
 
@@ -122,15 +111,9 @@ function view_block_subscribe($attributes) {
     echo '</div>';
     echo '</div>';
     $output = ob_get_clean();
-    // set_transient($transient_key, $output, 5 * MINUTE_IN_SECONDS);
 
     return $output;
 }  
-
-
-
-
-
 
 
 function view_block_featured_products($attributes){
@@ -155,11 +138,6 @@ function view_block_featured_products($attributes){
 
 
     $platforms = array('Xbox' ,'PC', 'PlayStation');
-
-
-
-  
-
 
     if (!empty($featured_games)) {
         echo '<div class="games-list">';
@@ -245,3 +223,73 @@ function view_block_single_news(){
     echo '</article>';
     return ob_get_clean();
 }
+
+
+function view_block_news_header($attributes){
+ 
+    $image_bg = (!empty($attributes['image']) ? 'style="background-image: url(' . esc_url($attributes['image']) . ');"' : '');
+
+    ob_start();
+    echo '<div ' . get_block_wrapper_attributes() . ' ' . $image_bg . '>';
+    echo '<div class="wrapper">';
+
+
+        if (!empty($attributes['title'])) {
+            echo '<h1 class="news-header-title">' . esc_html($attributes['title']) . '</h1>';
+        }
+
+        if (!empty($attributes['description'])) {
+            echo '<p class="news-header-description">' . esc_html($attributes['description']) . '</p>';
+        }
+
+        
+
+  $terms_news = get_terms(array(
+    'taxonomy' => 'news_category',
+    'hide_empty' => false,
+    ));
+
+    if (!empty($terms_news) && !is_wp_error($terms_news)) {
+        echo '<div class="news-categories">';
+        foreach ($terms_news as $term) {
+            $icon_url = (get_term_meta($term->term_id, 'news_category_icon', true)) ? '<img src="' . esc_url(get_term_meta($term->term_id, 'news_category_icon', true)) . '" alt="' . esc_attr($term->name) . '" />' : '';
+            $term_link = get_term_link($term);
+            echo '<div class="news-cat-item">
+            <a href="' . esc_url($term_link) . '">' . esc_html($term->name) . $icon_url . '</a>
+            </div>';
+        }
+        echo '</div>';
+
+    }
+
+        echo '</div>';
+   
+    echo '</div>';
+    $output = ob_get_clean();
+    
+    return $output;
+
+}
+
+function view_block_news_box(){
+
+    ob_start();
+    echo '<div ' . get_block_wrapper_attributes(). '>';
+
+    if(has_post_thumbnail()) {
+                    echo '<h3>' . get_the_title() . '</h3>';
+                  echo '<div class="news-thumbnail">';
+                echo '<img src="' . get_the_post_thumbnail_url(get_the_ID(), 'medium') . '" class="blur-image" alt="' . get_the_title() . '"/>';
+                echo '<img src="' . get_the_post_thumbnail_url(get_the_ID(), 'medium') . '" class="original-image" alt="' . get_the_title() . '"/>';
+                echo '</div>';
+      
+      
+      
+            echo '<div class="news-excerpt">'.get_the_excerpt().'</div>';
+            echo '<a href="' . get_permalink() . '" class="read-more">Open the post</a>';
+            echo '</div>';
+        
+    }
+
+    return ob_get_clean();
+}  

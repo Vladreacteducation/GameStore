@@ -130,6 +130,7 @@ body {
 --text-secondary: rgba(14, 13, 15, 0.7);
 --secondary-48: rgba(255, 255, 255, 0.48);
 --white-contrast : #0a090a;
+--black-contrast : #fff;
 --purple-main: #6f76C0;
 --mobile-menu:#fafafa; 
 --mask-gradient: linear-gradient(270deg, rgba(14, 13, 15, 0) 0%, #ececec 79.5%);
@@ -151,6 +152,7 @@ body {
   --text-secondary: rgba(255, 255, 255, 0.7);
   --secondary-48: rgba(14, 13, 15, 0.60);
   --white-contrast : #FFFFFF;
+  --black-contrast : #0A090A;
   --mask-gradient: linear-gradient(270deg, rgba(14, 13, 15, 0) 0%, #0E0D0F 79.5%);
   --mask-gradient-second: linear-gradient(180deg, rgba(14, 13, 15, 0) 0%, #0E0D0F 100%);
   --divider-input: rgba(255, 255, 255, 0.24);

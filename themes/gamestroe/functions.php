@@ -59,6 +59,18 @@ function gamestore_gutenberg_styles() {
 
 	add_editor_style( '/assets/css/editor-custom-style.css' );
 
+	wp_enqueue_style('gamestore-general', get_template_directory_uri().'/assets/css/editor-custom-style.css', [], wp_get_theme()->get( 'Version' ));
+
 }
 add_action( 'enqueue_block_editor_assets', 'gamestore_gutenberg_styles' );
+
+
+
+
+function gamestore_gutenberg_shared_styles() {
+	wp_enqueue_style('gamestore-google-fonts', gamestore_google_fonts(), [], '1.0.0');
+	wp_enqueue_style('gamestore-general-admin', get_template_directory_uri().'/assets/css/editor-custom-style.css', [], wp_get_theme()->get( 'Version' ));
+}
+add_action('enqueue_block_assets', 'gamestore_gutenberg_shared_styles');
+
 
