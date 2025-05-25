@@ -12,6 +12,7 @@ margin-bottom: clamp(3.75rem, calc(2.77rem + 4.92vw), 7.5rem)!important;
     display: flex;
     flex-direction: column;
     gap: 24px;
+    box-sizing: border-box;
 
     .footer-copyrights{
       font-weight: 400;

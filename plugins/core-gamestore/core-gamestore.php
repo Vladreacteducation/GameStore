@@ -19,3 +19,8 @@ require_once GAMESTORE_PLUGIN_PATH . 'includes/games-search.php';
 
 require_once GAMESTORE_PLUGIN_PATH . 'includes/games-meta.php';
 
+require_once GAMESTORE_PLUGIN_PATH . 'includes/social-share.php';
+
+require_once GAMESTORE_PLUGIN_PATH . 'includes/news-term-meta.php';
+
+ 

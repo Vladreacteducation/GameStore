@@ -61,5 +61,18 @@ function create_block_blocks_gamestore_block_init() {
     register_block_type( __DIR__ . '/build/block-faq' ); # реєстрація faq блоку
 
     register_block_type( __DIR__ . '/build/block-footer' ); # реєстрація footer блоку
-}
+
+    register_block_type( __DIR__ . '/build/block-single-news',array(
+        'render_callback' => 'view_block_single_news'
+    ));  # page single-news блоку
+
+
+        register_block_type( __DIR__ . '/build/block-news-header',array(
+        'render_callback' => 'view_block_news_header'
+    ));  # news_header блоку
+
+        register_block_type( __DIR__ . '/build/block-news-box',array(
+        'render_callback' => 'view_block_news_box'
+    ));  # page block-news-box блоку
+}  
 add_action( 'init', 'create_block_blocks_gamestore_block_init' );

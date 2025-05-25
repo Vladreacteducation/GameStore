@@ -50,7 +50,7 @@
 					"name": "Secondary and primary"
 				},
 				{
-					"colors": ["#3DAFE2 ", "#0a090a"],
+					"colors": ["#3DAFE2", "#0a090a"],
 					"slug": "primary-contrast",
 					"name": "Primary and Contrast"
 				}
