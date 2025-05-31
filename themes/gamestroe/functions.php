@@ -74,3 +74,28 @@ function gamestore_gutenberg_shared_styles() {
 add_action('enqueue_block_assets', 'gamestore_gutenberg_shared_styles');
 
 
+
+function gutenberg_activate_on_products($can_edit, $post_type) {
+	if ($post_type === 'product') {
+		return true; // Enable Gutenberg for products
+	}
+	return $can_edit; // Default behavior for other post types
+	
+
+}
+add_filter('use_block_editor_for_post_type', 'gutenberg_activate_on_products', 10, 2);
+
+
+function enable_taxonomy_block_rest($args) {
+
+		$args['show_in_rest'] = true; // Ensure the taxonomy is available in the REST API
+	return $args;
+}
+
+add_filter('woocommerce_taxonomy_args_product_cat', 'enable_taxonomy_block_rest', 10, 1);
+
+add_filter('woocommerce_taxonomy_args_product_cat', 'enable_taxonomy_block_rest', 10, 1);
+
+add_filter('woocommerce_product_description_heading', '__return_false');
+
+

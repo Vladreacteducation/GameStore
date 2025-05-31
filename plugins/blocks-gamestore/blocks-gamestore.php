@@ -74,5 +74,9 @@ function create_block_blocks_gamestore_block_init() {
         register_block_type( __DIR__ . '/build/block-news-box',array(
         'render_callback' => 'view_block_news_box'
     ));  # page block-news-box блоку
+
+        register_block_type( __DIR__ . '/build/block-single-game',array(
+        'render_callback' => 'view_block_single_game'
+    ));  # single game
 }  
 add_action( 'init', 'create_block_blocks_gamestore_block_init' );
