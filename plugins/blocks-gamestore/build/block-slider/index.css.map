@@ -1,0 +1,1 @@
+{"version":3,"file":"block-slider/index.css","mappings":";;;AAAA;EACE;EACA;AACF,C","sources":["webpack://blocks-gamestore/./src/block-slider/editor.scss"],"sourcesContent":[".wp-block-blocks-gamestore-block-slider .slider-inner-content .slider-media {\n  padding-top: 0;\n  padding-bottom: 0;\n}"],"names":[],"sourceRoot":""}

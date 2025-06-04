@@ -392,3 +392,216 @@ function view_block_single_game(){
 
 
 
+function view_block_similar_products($attributes){
+  global $post;
+
+  $link_html = ($attributes['link']) ? '<a href="'.esc_url($attributes['link']).'" class="view-all-link">'.$attributes['linkAnchor'].'</a>' : null;
+
+  if(!$post || !is_singular('product')) return;
+
+  $product_id = $post->ID;
+  $product = wc_get_product($product_id);
+
+  if(!$product) return;
+
+  $genres = wp_get_post_terms($product_id, "genres", array("fields" => "ids"));
+  $platforms = wp_get_post_terms($product_id, "platforms", array("fields" => "ids"));
+
+  $tax_query = array('relation' => 'AND');
+  if(!empty($genres)){
+    $tax_query[] = array(
+      'taxonomy' => 'genres',
+      'field' => 'term_id',
+      'terms' => $genres,
+    );
+  }
+  if(!empty($platforms)){
+    $tax_query[] = array(
+      'taxonomy' => 'platforms',
+      'field' => 'term_id',
+      'terms' => $platforms,
+    );
+  }
+
+  $similar_games = wc_get_products(array(
+    'status' => 'publish',
+    'limit' => $attributes['count'],
+    'exclude' => array($product_id),
+    'tax_query' => $tax_query,
+  ));
+  
+  ob_start();
+  echo '<div '. get_block_wrapper_attributes( array('class' => 'wrapper')) .'>';
+    echo '<div class="similar-top">';
+      if($attributes['title']){
+        echo '<h2>' . $attributes['title'] . '</h2>';
+      }
+      echo '<div class="right-similar-top">';
+        echo $link_html;
+        if(count($similar_games) > 6){
+          echo '<div class="similar-navigation"><div class="similar-left"></div><div class="similar-right"></div></div>';
+        }
+      echo '</div>';
+    echo '</div>';
+
+    $platforms = array('Xbox', 'PC', 'PlayStation');
+  
+    if (!empty($similar_games)) {
+        
+        echo '<div class="games-list similar-games-list"><div class="swiper-wrapper">';
+          foreach($similar_games as $game){
+            $platforms_html = '';
+            echo '<div class="game-result swiper-slide">';
+              echo '<a href="'.esc_url($game->get_permalink()).'">';
+                  echo '<div class="game-featured-image">'.$game->get_image('full').'</div>';
+                  echo '<div class="game-meta">';
+                    echo '<div class="game-price">'.$game->get_price_html().'</div>';
+                    echo '<h3>'.$game->get_name().'</h3>';
+                    echo '<div class="game-platforms">';
+                      foreach($platforms as $platform){
+                        $platforms_html .= (get_post_meta($game->get_ID(), '_platform_'.strtolower($platform), true ) == 'yes') ? '<div class="platform_'.strtolower($platform).'"></div>' : null;
+                      }
+                      echo $platforms_html;
+                    echo '</div>';
+                  echo '</div>';
+              echo '</a>';
+            echo '</div>';
+          }
+        echo '</div></div>';
+    } else {
+        echo '<p>No games found.</p>';
+    }
+    echo '</div>';
+
+    return ob_get_clean();
+}
+
+
+
+function view_block_product_header($attributes){
+
+  $image_bg = ($attributes['image']) ? 'style="background-image: url(' . $attributes['image'] . ')"' : '';
+
+  ob_start();
+  echo '<div '. get_block_wrapper_attributes() . $image_bg .'>';
+    echo '<div class="wrapper">';
+    if($attributes['title']){
+        echo '<h1 class="news-header-title">' . $attributes['title'] . '</h1>';
+    }
+
+    if($attributes['styleType'] == 'archive'){
+      $terms_news = get_terms( array(
+          'taxonomy' => 'genres',
+          'hide_empty' => false,
+      ) );
+      if(!empty($terms_news) && !is_wp_error($terms_news)){
+        echo '<div class="games-categories">';
+          foreach($terms_news as $term){
+            echo '<div class="games-cat-item">
+              <a href="'.get_term_link($term).'">'.$term->name . '</a>
+            </div>';
+          }
+        echo '</div>';
+      }
+    } else {
+      if(!empty($attributes['links'])){
+        echo '<div class="cart-link">';
+          foreach($attributes['links'] as $link){
+            echo '<div class="cart-link-item">
+              <a href="'.$link['url'].'">'.$link['anchor'] . '</a>
+            </div>';
+          }
+        echo '</div>';
+      }
+    }
+
+    echo '</div>';
+  echo '</div>';
+
+  // Return the buffered content
+  return ob_get_clean();
+}
+
+
+
+function view_block_bestseller_products($attributes){
+  
+  if(isset($attributes['productType']) && $attributes['productType'] == 'crossseller'){
+    $cross_sell_ids = [];
+
+    $cart = WC()->cart->get_cart();
+    if(!empty($cart)){
+      foreach($cart as $cart_item){
+        $product_id = $cart_item['product_id'];
+        $product_cross_sells = get_post_meta($product_id, '_crosssell_ids', true);
+
+        if(!empty($product_cross_sells)){
+          $cross_sell_ids = array_merge($cross_sell_ids, $product_cross_sells);
+        }
+      }
+    }
+
+    $cross_sell_ids = array_unique($cross_sell_ids);
+    
+    if(!empty($cross_sell_ids)){
+      $slider_games = wc_get_products(array(
+        'status' => 'publish',
+        'limit' => $attributes['count'],
+        'include' => $cross_sell_ids,
+      ));
+    } else {
+      $slider_games = [];
+    }
+  } else {
+    $slider_games = wc_get_products(array(
+      'status' => 'publish',
+      'limit' => $attributes['count'],
+      'meta_key' => 'total_sales',
+      'orderby' => 'meta_value_num',
+      'order' => 'DESC',
+    ));
+  }
+  
+  ob_start();
+  echo '<div '. get_block_wrapper_attributes( array('class' => 'wrapper')) .'>';
+    
+    if (!empty($slider_games)) {
+
+      echo '<div class="similar-top">';
+        if($attributes['title']){
+          echo '<h2>' . $attributes['title'] . '</h2>';
+        }
+        echo '<div class="right-similar-top">';
+          if(count($slider_games) > 6){
+            echo '<div class="similar-navigation"><div class="similar-left"></div><div class="similar-right"></div></div>';
+          }
+        echo '</div>';
+      echo '</div>';
+
+      $platforms = array('Xbox', 'PC', 'PlayStation');
+        
+        echo '<div class="games-list bestseller-games-list"><div class="swiper-wrapper">';
+          foreach($slider_games as $game){
+            $platforms_html = '';
+            echo '<div class="game-result swiper-slide">';
+              echo '<a href="'.esc_url($game->get_permalink()).'">';
+                  echo '<div class="game-featured-image">'.$game->get_image('full').'</div>';
+                  echo '<div class="game-meta">';
+                    echo '<div class="game-price">'.$game->get_price_html().'</div>';
+                    echo '<h3>'.$game->get_name().'</h3>';
+                    echo '<div class="game-platforms">';
+                      foreach($platforms as $platform){
+                        $platforms_html .= (get_post_meta($game->get_ID(), '_platform_'.strtolower($platform), true ) == 'yes') ? '<div class="platform_'.strtolower($platform).'"></div>' : null;
+                      }
+                      echo $platforms_html;
+                    echo '</div>';
+                  echo '</div>';
+              echo '</a>';
+            echo '</div>';
+          }
+        echo '</div></div>';
+    } 
+    echo '</div>';
+
+    return ob_get_clean();
+}
