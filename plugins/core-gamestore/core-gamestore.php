@@ -9,6 +9,7 @@
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain: core-gamestore
  * Domain Path: /languages
+ * Required Plugins:   woocommerce
  * 
  */
 
@@ -24,6 +25,8 @@ require_once GAMESTORE_PLUGIN_PATH . 'includes/games-tax.php';
 require_once GAMESTORE_PLUGIN_PATH . 'includes/social-share.php';
 
 require_once GAMESTORE_PLUGIN_PATH . 'includes/news-term-meta.php';
+
+require_once GAMESTORE_PLUGIN_PATH . 'includes/games-filter.php';
 
 
  

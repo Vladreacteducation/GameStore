@@ -9,6 +9,7 @@
  * License:           GPL-2.0-or-later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain:       blocks-gamestore
+ * Required Plugins:   woocommerce
  *
  * @package CreateBlock
  */
@@ -92,6 +93,13 @@ function create_block_blocks_gamestore_block_init() {
              register_block_type( __DIR__ . '/build/block-bestseller-products',array(
         'render_callback' => 'view_block_bestseller_products'
     )); # bestsellers блок
+
+           register_block_type( __DIR__ . '/build/block-games-box',array(
+        'render_callback' => 'view_block_games_box'
+    )); # block games box
+
+
+
 }  
 
 add_action( 'init', 'create_block_blocks_gamestore_block_init' );
