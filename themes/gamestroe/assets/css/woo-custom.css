@@ -1,0 +1,150 @@
+.gamestore-cart-page {
+  flex-direction: column;
+  width: 100%;
+  max-width: 1540px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 0;
+  padding-right: 0;
+  margin-bottom: clamp(3.75rem, calc(2.77rem + 4.92vw), 7.5rem);
+}
+.gamestore-cart-page .entry-content {
+    width: 100%;
+}
+.wc-block-components-sidebar-layout {
+  gap: 24px;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+.gamestore-cart-page .entry-content .wc-block-components-main {
+  padding-right: 24px;
+  width: calc(100% - 495px - 24px);
+}
+.gamestore-cart-page .entry-content .wc-block-components-sidebar,
+.wp-block-woocommerce-checkout-totals-block {
+  margin: 0;
+  width: 495px;
+  padding-left: 24px;  
+}
+.wp-block-woocommerce-checkout-order-summary-block {
+  border:0;
+}
+.is-large.wc-block-cart .wc-block-cart-items td {
+  border:0;
+  padding: 0;
+  padding-bottom: 24px;
+}
+.wc-block-cart-item__image a {
+  width: 243px;
+  height: 340px;
+  display: block;
+}
+.wc-block-cart-item__image img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+}
+.wc-block-cart-item__wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-left: 24px;
+  align-items: flex-start;
+}
+.wc-block-cart-item__quantity {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+table.wc-block-cart-items .wc-block-cart-items__row .wc-block-cart-item__quantity button.wc-block-cart-item__remove-link {
+  border-radius: 5px;
+  background: var(--white-contrast, #0E0D0F)!important;
+  color: var(--black-contrast, #FFF)!important;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 140%; /* 19.6px */
+  letter-spacing: 2.1px;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 8px 24px;
+  min-height: 48px;
+  box-sizing: border-box;
+}
+.wc-block-components-quantity-selector {
+  margin-bottom: 0!important;
+  min-height: 48px!important;
+}
+.wc-block-components-quantity-selector input.wc-block-components-quantity-selector__input {
+  color: var(--text-secondary, rgba(14, 13, 15, 0.70));
+  text-align: center;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 120%;
+}
+.wc-block-components-product-name {
+  color: var(--text-primary, #0E0D0F);
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%;
+  text-decoration: none;
+}
+.wc-block-components-sidebar-layout > div {
+  border-radius: 16px;
+  border: 1px solid var(--divider-main, rgba(14, 13, 15, 0.08));
+  background: var(--background-2, rgba(250, 250, 250, 0.02));
+  backdrop-filter: blur(4px);
+  padding: 24px;
+}
+.wc-block-cart-items thead {
+  display: none;
+}
+
+/* Checkout Form */
+.wc-block-components-form .wc-block-components-text-input.is-active label {
+  display: none;
+}
+.wc-block-components-form .wc-block-components-text-input input:-webkit-autofill, .wc-block-components-form .wc-block-components-text-input.is-active input[type=email], .wc-block-components-form .wc-block-components-text-input.is-active input[type=number], .wc-block-components-form .wc-block-components-text-input.is-active input[type=password], .wc-block-components-form .wc-block-components-text-input.is-active input[type=tel], .wc-block-components-form .wc-block-components-text-input.is-active input[type=text], .wc-block-components-form .wc-block-components-text-input.is-active input[type=url], .wc-block-components-text-input input:-webkit-autofill, .wc-block-components-text-input.is-active input[type=email], .wc-block-components-text-input.is-active input[type=number], .wc-block-components-text-input.is-active input[type=password], .wc-block-components-text-input.is-active input[type=tel], .wc-block-components-text-input.is-active input[type=text], .wc-block-components-text-input.is-active input[type=url] {
+  padding: 1em 0.5em;
+  background: transparent;
+}
+.wc-blocks-components-select .wc-blocks-components-select__label {
+  display: none;
+}
+.wc-blocks-components-select .wc-blocks-components-select__container {
+  background: transparent;
+  height: 48px;
+}
+.wc-blocks-components-select .wc-blocks-components-select__select {
+  padding-top: 0;
+  border-radius: 5px;
+  border: 1px solid var(--divider-input, rgba(14, 13, 15, 0.24));
+  color: var(--text-secondary, rgba(14, 13, 15, 0.70));
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+}
+.wc-blocks-components-select .wc-blocks-components-select__select option {
+  color: #000;
+}
+.wc-block-components-form .wc-block-components-text-input input[type=email], .wc-block-components-form .wc-block-components-text-input input[type=number], .wc-block-components-form .wc-block-components-text-input input[type=password], .wc-block-components-form .wc-block-components-text-input input[type=tel], .wc-block-components-form .wc-block-components-text-input input[type=text], .wc-block-components-form .wc-block-components-text-input input[type=url], .wc-block-components-text-input input[type=email], .wc-block-components-text-input input[type=number], .wc-block-components-text-input input[type=password], .wc-block-components-text-input input[type=tel], .wc-block-components-text-input input[type=text], .wc-block-components-text-input input[type=url] {
+  border-radius: 5px;
+  border: 1px solid var(--divider-input, rgba(14, 13, 15, 0.24));
+  background: transparent;
+  color: var(--text-secondary, rgba(14, 13, 15, 0.70));
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  height: 48px;
+}
+.wc-block-components-form .wc-block-components-text-input label, .wc-block-components-text-input label {
+  color: var(--text-secondary, rgba(14, 13, 15, 0.70));
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  top: 50%;
+}
