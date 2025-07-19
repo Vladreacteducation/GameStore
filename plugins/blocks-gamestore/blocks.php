@@ -98,22 +98,23 @@ function view_block_recent_news($attributes) {
 }
 
 function view_block_subscribe($attributes) {
-
+    $title = isset($attributes['title']) ? $attributes['title'] : '';
+    $description = isset($attributes['description']) ? $attributes['description'] : '';
+    $shortcode = isset($attributes['shortcode']) ? $attributes['shortcode'] : '';
     $image_bg = (!empty($attributes['image']) ? 'style="background-image: url(' . esc_url($attributes['image']) . ');"' : '');
 
     ob_start();
-    echo '<div ' . get_block_wrapper_attributes(array('class'=> 'alignfull')). $image_bg . '>';
-   echo '<div class="subscribe-inner wrapper">';
-   echo '<h2 class="subscribe-title">' . ($attributes['title']) . '</h2>';
-   echo '<p class="subscribe-description">' . ($attributes['description']) . '</p>';
-   echo '<div class="subscribe-shortcode">' . do_shortcode(($attributes['shortcode'])) . '</div>';
-
+    echo '<div ' . get_block_wrapper_attributes(array('class'=> 'alignfull')) . ' ' . $image_bg . '>';
+    echo '<div class="subscribe-inner wrapper">';
+    echo '<h2 class="subscribe-title">' . esc_html($title) . '</h2>';
+    echo '<p class="subscribe-description">' . esc_html($description) . '</p>';
+    echo '<div class="subscribe-shortcode">' . do_shortcode($shortcode) . '</div>';
     echo '</div>';
     echo '</div>';
-    $output = ob_get_clean();
 
-    return $output;
-}  
+    return ob_get_clean();
+}
+
 
 
 function view_block_featured_products($attributes){
@@ -213,7 +214,9 @@ function view_block_single_news(){
     echo '<div class="wrapper news-container">';
     echo '<div class="news-social-share">Share'.gamestore_social_share(get_the_permalink(), get_the_title()).'</div>';
 
-    echo '<div class="news-content">' . get_the_content() . '</div>';
+    // echo '<div class="news-content">' . get_the_content() . '</div>';
+    // // Use apply_filters to ensure content is processed correctly
+    echo '<div class="news-content">' . apply_filters('the_content', get_the_content()) . '</div>';
 
     
    
@@ -746,4 +749,54 @@ function view_block_games_box($attributes){
   $html .= '</div>';
 
   return $html;
+}
+
+
+function view_block_playstation_category_block($attributes) {
+    $title = isset($attributes['title']) ? esc_html($attributes['title']) : '';
+    $description = isset($attributes['description']) ? esc_html($attributes['description']) : '';
+    $backgroundImage = isset($attributes['backgroundImage']) ? esc_url($attributes['backgroundImage']) : '';
+
+    $terms = get_terms([
+        'taxonomy' => 'playstation_category',
+        'hide_empty' => false,
+    ]);
+
+    ob_start();
+
+    $style_attr = $backgroundImage ? 'style="background-image: url(' . $backgroundImage . '); background-size: cover; background-position: center;"' : '';
+
+    echo '<div ' . get_block_wrapper_attributes(['class' => 'playstation-category-block alignfull']) . ' ' . $style_attr . '>';
+    echo '<div class="wrapper">';
+
+    if ($title) {
+        echo '<h2 class="block-title">' . $title . '</h2>';
+    }
+
+    if ($description) {
+        echo '<p class="block-description">' . $description . '</p>';
+    }
+
+    if (!empty($terms) && !is_wp_error($terms)) {
+        echo '<div class="category-list">';
+        foreach ($terms as $term) {
+            $image_url = get_term_meta($term->term_id, 'playstation_category_image', true);
+
+            echo '<div class="category-item">';
+            if ($image_url) {
+                echo '<img src="' . esc_url($image_url) . '" alt="' . esc_attr($term->name) . '" />';
+            } else {
+                echo '<div class="no-image">No image</div>';
+            }
+            echo '<h3 class="category-title">' . esc_html($term->name) . '</h3>';
+            echo '</div>';
+        }
+        echo '</div>';
+    } else {
+        echo '<p>No categories found.</p>';
+    }
+
+    echo '</div></div>';
+
+    return ob_get_clean();
 }

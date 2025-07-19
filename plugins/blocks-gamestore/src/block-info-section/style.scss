@@ -1,0 +1,58 @@
+.wp-block-blocks-gamestore-block-info-section {
+ margin-top: clamp(3.75rem, calc(2.77rem + 4.92vw), 7.5rem)!important;
+  margin-bottom: clamp(3.75rem, calc(2.77rem + 4.92vw), 7.5rem)!important;
+
+  .info-section-inner {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+
+
+    &.reverse {
+      flex-direction: row-reverse !important;
+    }
+
+    &-box {
+      display: flex;
+      flex-direction: column;
+      row-gap: 20px;
+    }
+    .info-section-title{
+   strong {
+			background: var(--accent-gradient, linear-gradient(90deg, #3dafe2 0%, #6f76c0 100%));
+			 background-clip:text ;
+			 --webkit-background-clip:text;
+			 -webkit-text-fill-color: transparent;
+			}
+    }
+.info-section-description{
+   a{  text-decoration: none;
+    color: var(--purple---main, #6F76C0);}
+}
+   
+
+    .info-section-button{
+        display: inline-flex;
+        width: fit-content;
+    box-shadow: 0 16px 24px 0px rgba(61, 175, 226, 0.48);
+    background: var(--accent-gradient, linear-gradient(90deg, #3dafe2 0%, #6f76c0 100%));
+    border-radius: 5px;
+    padding: 20px 32px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #fff!important;
+    text-decoration: none;
+    transition: all 0.5s ease-in-out;
+
+    &:hover{background: linear-gradient(90deg, #6f76c0 0%, #535994 100%);
+    }
+  }
+}
+}
+  

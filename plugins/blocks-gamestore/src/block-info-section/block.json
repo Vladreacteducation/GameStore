@@ -1,0 +1,46 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "blocks-gamestore/block-info-section",
+  "version": "0.1.0",
+	"title": "Block Info Section",
+	"category": "gamestore",
+	"icon": "smiley",
+	"description": "Block Info Section",
+	"example": {},
+	"supports": {
+		"html": false
+	},
+	"attributes": {
+    "title": {
+      "type": "string",
+      "source": "html",
+      "selector": ".info-section-title"
+    },
+    "description": {
+      "type": "string",
+      "source": "html",
+      "selector": ".info-section-description"
+    }, 
+  "link": {
+    "type": "string",
+    "default": ""
+  },
+  "linkText": {
+    "type": "string",
+    "default": "Go to contact page"
+  },
+  "image": {
+    "type": "string",
+    "default": ""
+  },
+   "rowReverse": {
+      "type": "boolean",
+      "default": false
+    }
+},
+	"textdomain": "blocks-gamestore",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css"
+}

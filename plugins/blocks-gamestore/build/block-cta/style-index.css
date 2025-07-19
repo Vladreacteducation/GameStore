@@ -73,5 +73,8 @@
   text-transform: uppercase;
   color: var(--text-primary);
 }
+.wp-block-blocks-gamestore-block-cta .cta-inner .left-part .links-list p {
+  margin: 0 !important;
+}
 
 /*# sourceMappingURL=style-index.css.map*/

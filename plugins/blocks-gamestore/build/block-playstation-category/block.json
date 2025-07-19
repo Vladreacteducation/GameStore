@@ -1,12 +1,12 @@
 {
   "$schema": "https://schemas.wp.org/trunk/block.json",
   "apiVersion": 3,
-  "name": "blocks-gamestore/playstation-category-block",
+  "name": "blocks-gamestore/block-playstation-category",
   "version": "0.1.0",
-  "title": "Playstation Category Block",
+  "title": "Custom playstation block category",
   "category": "gamestore",
   "icon": "smiley",
-  "description": "Playstation Category Block",
+  "description": "Custom playstation block category",
   "example": {},
   "supports": {
     "html": false
@@ -18,11 +18,9 @@
     "description": {
       "type": "string"
     },
-    "image": {
-      "type": "string"
-    },
-    "shortcode": {
-      "type": "string"
+    "backgroundImage": {
+      "type": "string",
+      "default": ""
     }
   },
   "textdomain": "blocks-gamestore",
