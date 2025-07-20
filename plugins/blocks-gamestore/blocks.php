@@ -106,7 +106,7 @@ function view_block_subscribe($attributes) {
     ob_start();
     echo '<div ' . get_block_wrapper_attributes(array('class'=> 'alignfull')) . ' ' . $image_bg . '>';
     echo '<div class="subscribe-inner wrapper">';
-    echo '<h2 class="subscribe-title">' . esc_html($title) . '</h2>';
+    echo '<h2 class="subscribe-title">' . wp_kses_post($title) . '</h2>';
     echo '<p class="subscribe-description">' . esc_html($description) . '</p>';
     echo '<div class="subscribe-shortcode">' . do_shortcode($shortcode) . '</div>';
     echo '</div>';

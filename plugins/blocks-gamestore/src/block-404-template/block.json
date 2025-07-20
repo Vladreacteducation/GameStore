@@ -1,0 +1,37 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "blocks-gamestore/block-404-template",
+	"version": "0.1.0",
+	"title": "404 Page Block",
+	"category": "gamestore",
+	  "icon": "warning",
+   "description": "Custom 404 page block with editable image and text",
+	"example": {},
+	"supports": {
+		"html": false
+	},
+"attributes": {
+    "title": {
+      "type": "string",
+      "default": "Page Not Found"
+    },
+    "description": {
+      "type": "string",
+      "default": "Oops! This page is missing, but our games collection isn't."
+    },
+    "backgroundImage": {
+      "type": "string",
+      "default": ""
+    },
+	  "foregroundImage": {
+    "type": "string",
+    "default": ""
+  }
+  },
+	"textdomain": "blocks-gamestore",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css"
+}
+  

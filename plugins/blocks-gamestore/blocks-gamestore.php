@@ -110,6 +110,8 @@ function create_block_blocks_gamestore_block_init() {
         'render_callback' => 'view_block_playstation_category_block'
     )); # block playstation category block  
 
+    register_block_type( __DIR__ . '/build/block-404-template'); # block 404 template
+
 }  
 
 add_action( 'init', 'create_block_blocks_gamestore_block_init' );

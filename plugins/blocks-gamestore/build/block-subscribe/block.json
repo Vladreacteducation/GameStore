@@ -1,12 +1,12 @@
 {
   "$schema": "https://schemas.wp.org/trunk/block.json",
   "apiVersion": 3,
-  "name": "blocks-gamestore/playstation-category-block",
+  "name": "blocks-gamestore/subscribe",
   "version": "0.1.0",
-  "title": "Playstation Category Block",
+  "title": "Subscribe",
   "category": "gamestore",
   "icon": "smiley",
-  "description": "Playstation Category Block",
+  "description": "Subscribe Block",
   "example": {},
   "supports": {
     "html": false
